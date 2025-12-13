@@ -54,7 +54,7 @@ export default function AuthProvider({
     /*
     if (!isAuthenticated) {
       router.push("/login");
-    
+    }
 		console.log("AuthProvider useEffect - isAuthenticated:", isAuthenticated);
     const interval = setInterval(() => {
       countRef.current += 1;
