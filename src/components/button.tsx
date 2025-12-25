@@ -6,7 +6,7 @@ export default function Button({
   onClick,
   variant = "primary",
   disabled = false,
-  className = "",
+  className,
   icon,
   iconColor,
 }: IButton) {
@@ -16,7 +16,6 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
       className={`button-base ${variant} ${className}`}
-      
     >
       {icon && (
         <span className="button-icon">

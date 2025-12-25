@@ -3,23 +3,28 @@ import Icons from "./icons";
 
 interface CounterProps {
   count?: number;
+  clickAdd?: (value: number) => void;
+  clickRemove?: (value: number) => void;
 }
 
-export default function Counter({ count = 0 }: CounterProps) {
-  const [value, setValue] = useState(count);
+export default function Counter({ 
+  count = 0, 
+  clickAdd,
+  clickRemove
+ }: CounterProps) {
 
-  const decrease = () => (value === 0 ? setValue(value) : setValue(value - 1));
-  const increase = () => setValue(value + 1);
+ 
+
 
   return (
     <div className="counter">
-      <button className="counter-btn counter-btn-left" onClick={decrease}>
+      <button className="counter-btn counter-btn-left" onClick={() => clickRemove && clickRemove(count)}>
         <span className="button-icon">
           <Icons name="minus" />
         </span>
       </button>
-      <div className="counter-display">{value}</div>
-      <button className="counter-btn counter-btn-right" onClick={increase}>
+      <div className="counter-display">{count}</div>
+      <button className="counter-btn counter-btn-right" onClick={() => clickAdd && clickAdd(count)}>
         <span className="button-icon">
           <Icons name="plus" />
         </span>

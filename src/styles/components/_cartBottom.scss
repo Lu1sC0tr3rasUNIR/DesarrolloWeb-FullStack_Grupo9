@@ -1,0 +1,16 @@
+@use '../variables/_colors.scss' as colors;
+
+.cart-bottom-container {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid colors.get-color('paper', 3);
+    width: 40px;
+    height: 40px;   
+    border-radius: 8px;    
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}

@@ -1,8 +1,10 @@
 import { StorageContext } from "@/context/StorageContext";
 import { ICheckbox } from "@/interfaces/components/ICheckbox";
+import { IStorageContext } from "@/interfaces/context/IStorageContext";
+import { ICartItem } from "@/interfaces/hooks/IUseCart";
 import { IBooks } from "@/interfaces/lib/myBackendInterface";
 import { myBackend, myCategorys } from "@/lib/myBackend";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export default function StorageProvider({
   children,
@@ -12,7 +14,13 @@ export default function StorageProvider({
   // StorageProvider logic here
   const [books, setBooks] = useState<Map<string, IBooks>>(new Map());
   const [category, setCategory] = useState<Map<string, ICheckbox>>(new Map());
+  const [cart, setCart] = useState<Map<string, ICartItem>>(new Map());
+  const [activeCart, setActiveCart] = useState<boolean>(false);
+  const [totalValue, setTotalValue] = useState<number>(0);
 
+  const getBook = (isbn: string): IBooks | undefined => {
+    return books.get(isbn);
+  };
 
   const addBook = (book: IBooks) => {
     setBooks((prevBooks) => new Map(prevBooks).set(book.isbn, book));
@@ -26,9 +34,17 @@ export default function StorageProvider({
     });
   };
 
-  const getBook = (isbn: string): IBooks | undefined => {
-    return books.get(isbn);
-  };
+  //Funciones del carrito
+  const updateCart = useCallback((newCart: Map<string, ICartItem>) => {
+    setCart(newCart);
+    const value = Array.from(newCart.values()).reduce((acc, item) => acc + item.value, 0);
+    setTotalValue(value);
+  }, []);
+
+  const setCartStatus = useCallback(() => {
+    setActiveCart(!activeCart);
+  }, [activeCart]);
+  
 
   useEffect(() => {
     const storedBooks = myBackend();
@@ -50,15 +66,20 @@ export default function StorageProvider({
     }
   }, []);
 
-  const value = useMemo(
+  const value: IStorageContext = useMemo(
     () => ({
       books,
       category,
       addBook,
       removeBook,
       getBook,
+      cart,
+      updateCart,
+      activeCart,
+      setCartStatus,
+      totalValue
     }),
-    [books, category]
+    [books, category, cart, addBook, removeBook, getBook, updateCart, activeCart, setCartStatus]
   );
 
   return (

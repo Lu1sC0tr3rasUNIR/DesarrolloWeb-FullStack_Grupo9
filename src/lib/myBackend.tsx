@@ -51,6 +51,7 @@ export const myBackend = (): IBooks[] => {
       tags: ["clásico", "realismo mágico", "literatura latinoamericana"],
       description:
         "La historia de la familia Buendía a lo largo de siete generaciones en el pueblo ficticio de Macondo.",
+      price: 25,
     },
     {
       id: 2,
@@ -66,6 +67,7 @@ export const myBackend = (): IBooks[] => {
       tags: ["clásico", "aventuras", "literatura española"],
       description:
         "Las aventuras del ingenioso hidalgo Don Quijote y su escudero Sancho Panza en su búsqueda de justicia.",
+      price: 30,
     },
     {
       id: 3,
@@ -81,6 +83,7 @@ export const myBackend = (): IBooks[] => {
       tags: ["distopía", "ciencia ficción", "política"],
       description:
         "Una crítica al totalitarismo y la vigilancia estatal a través del régimen del Gran Hermano.",
+      price: 20,
     },
     {
       id: 4,
@@ -96,6 +99,7 @@ export const myBackend = (): IBooks[] => {
       isbn: "9780156012195",
       description:
         "Un cuento sobre la inocencia, la amistad y el amor contado desde la perspectiva de un niño viajero.",
+      price: 15,
     },
     {
       id: 5,
@@ -111,6 +115,7 @@ export const myBackend = (): IBooks[] => {
       isbn: "9780140449136",
       description:
         "Raskólnikov lucha con la culpa y la redención tras cometer un asesinato en San Petersburgo.",
+      price: 27,
     },
     {
       id: 6,
@@ -126,6 +131,7 @@ export const myBackend = (): IBooks[] => {
       tags: ["romance", "clásico", "literatura inglesa"],
       description:
         "La historia de Elizabeth Bennet y el señor Darcy en una crítica social sobre la época georgiana.",
+      price: 19,
     },
     {
       id: 7,
@@ -141,6 +147,7 @@ export const myBackend = (): IBooks[] => {
       isbn: "9780061120084",
       description:
         "Una niña narra la lucha de su padre, un abogado, por defender a un hombre negro injustamente acusado.",
+      price: 22,
     },
     {
       id: 8,
@@ -156,6 +163,7 @@ export const myBackend = (): IBooks[] => {
       isbn: "9780156001311",
       description:
         "Un fraile franciscano investiga una serie de asesinatos en una abadía medieval.",
+      price: 24,
     },
     {
       id: 9,
@@ -171,6 +179,7 @@ export const myBackend = (): IBooks[] => {
       isbn: "9780547928227",
       description:
         "Bilbo Bolsón emprende una aventura inesperada junto a enanos para recuperar un tesoro custodiado por un dragón.",
+      price: 23,
     },
     {
       id: 10,
@@ -186,6 +195,7 @@ export const myBackend = (): IBooks[] => {
       isbn: "9780451419439",
       description:
         "Jean Valjean busca redención mientras es perseguido por el implacable inspector Javert.",
+      price: 33,
     },
     {
       id: 11,
@@ -201,6 +211,7 @@ export const myBackend = (): IBooks[] => {
       isbn: "9788437604185",
       description:
         "Una novela abierta que invita al lector a decidir el orden de lectura y a reflexionar sobre la existencia.",
+      price: 26,
     },
     {
       id: 12,
@@ -216,6 +227,7 @@ export const myBackend = (): IBooks[] => {
       tags: ["distopía", "ciencia ficción", "clásico"],
       description:
         "Una sociedad futurista donde los libros están prohibidos y los bomberos los queman.",
+      price: 20,
     },
     {
       id: 13,
@@ -231,6 +243,7 @@ export const myBackend = (): IBooks[] => {
       isbn: "9788408172177",
       description:
         "Un joven descubre un libro maldito que cambia su vida en la Barcelona de la posguerra.",
+      price: 28,
     },
     {
       id: 14,
@@ -246,6 +259,7 @@ export const myBackend = (): IBooks[] => {
       isbn: "9780450411433",
       description:
         "Un grupo de amigos enfrenta a una entidad maligna que toma la forma de un payaso llamado Pennywise.",
+      price: 29,
     },
     {
       id: 15,
@@ -261,6 +275,7 @@ export const myBackend = (): IBooks[] => {
       isbn: "9780061122415",
       description:
         "Santiago, un joven pastor, emprende un viaje en busca de su leyenda personal y del verdadero tesoro de la vida.",
+      price: 17,
     },
     {
       id: 16,
@@ -276,6 +291,7 @@ export const myBackend = (): IBooks[] => {
       tags: ["distopía", "aventura", "literatura juvenil"],
       description:
         "Katniss Everdeen debe sobrevivir a un mortal torneo televisado donde solo uno puede quedar con vida.",
+      price: 19,
     },
     {
       id: 17,
@@ -291,6 +307,7 @@ export const myBackend = (): IBooks[] => {
       tags: ["thriller", "misterio", "bestseller"],
       description:
         "El profesor Langdon descubre una conspiración relacionada con el Santo Grial y sociedades secretas.",
+      price: 25,
     },
     {
       id: 18,
@@ -306,6 +323,7 @@ export const myBackend = (): IBooks[] => {
       tags: ["clásico", "épica", "literatura antigua"],
       description:
         "Las aventuras de Ulises al intentar regresar a Ítaca tras la guerra de Troya.",
+      price: 22,
     },
     {
       id: 19,
@@ -321,6 +339,7 @@ export const myBackend = (): IBooks[] => {
       tags: ["terror", "gótico", "clásico"],
       description:
         "El conde Drácula intenta trasladarse a Inglaterra mientras un grupo de personas intenta detenerlo.",
+      price: 18,
     },
     {
       id: 20,
@@ -336,6 +355,7 @@ export const myBackend = (): IBooks[] => {
       tags: ["fantasía", "épica", "literatura inglesa"],
       description:
         "Frodo emprende una misión para destruir el Anillo Único y evitar que caiga en manos del mal.",
+      price: 35,
     },
   ];
 };

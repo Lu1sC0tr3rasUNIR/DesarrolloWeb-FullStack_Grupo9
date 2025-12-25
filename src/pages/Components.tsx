@@ -16,18 +16,7 @@ export default function Components() {
           <Button label="Guardar" variant="success" icon="check" />
           <Button label="Alerta" variant="alert" icon="info"></Button>
         </div>
-      </div>
-      <div className="component-section">
-        <div className="component-group">
-          <Card
-            title="Ejemplo de libro"
-            description="Esta es una descripción de ejemplo para el libro."
-            isbn="123-456-789"
-            price={19.99}
-            stock={42}
-          />
-        </div>
-      </div>
+      </div>p
       <div className="component-section">
         <div className="component-group">
           <Counter count={0} />
@@ -56,6 +45,7 @@ export default function Components() {
           <Icons name="close" />
           <Icons name="plus" />
           <Icons name="minus" />
+          <Icons name="cart" />
         </div>
       </div>
     </div>

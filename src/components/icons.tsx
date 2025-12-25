@@ -73,13 +73,13 @@ export default function Icons({ name, color }: IICons) {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-					<path
-						d="M12 8V16M16 12H8"
-						stroke="currentColor"
-						strokeWidth="2"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					/>
+          <path
+            d="M12 8V16M16 12H8"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       );
     case "minus":
@@ -109,13 +109,7 @@ export default function Icons({ name, color }: IICons) {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle
-            cx="11"
-            cy="11"
-            r="6"
-            stroke="currentColor"
-            strokeWidth="2"
-          />
+          <circle cx="11" cy="11" r="6" stroke="currentColor" strokeWidth="2" />
           <path
             d="M19 19L16 16"
             stroke="currentColor"
@@ -125,19 +119,62 @@ export default function Icons({ name, color }: IICons) {
           />
         </svg>
       );
-      case "heart":
+    case "heart":
       return (
-        <svg  
+        <svg
           width="24"
           height="24"
-          viewBox="0 0 24 24" 
+          viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M12 21C12 21 5 14.6863 5 9.73684C5 6.31802 7.68629 4 11 4C12.933 4 14.6686 5.05499 15.5 6.63636C16.3314 5.05499 18.067 4 20 4C23.3137 4 26 6.31802 26 9.73684C26 14.6863 19 21 19 21H12Z"
             stroke="currentColor"
-            strokeWidth="2" 
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+    case "cart":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 6H21L20 14H7L6 6Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M6 6L4 2H2"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <circle
+            cx="9"
+            cy="20"
+            r="2"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <circle
+            cx="18"
+            cy="20"
+            r="2"
+            stroke="currentColor"
+            strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
           />

@@ -1,0 +1,46 @@
+@use "../variables/_colors.scss" as colors;
+
+
+.cart-item{
+    &-container{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        gap: 20px;
+        width: 60%;
+
+
+        &_image{
+            width: 120px;
+            height: 160px;
+            border: 2px solid colors.get-color("paper", 5);
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        &_info {
+            border: 1px solid red;
+            display: flex;
+            gap: 5px;
+            width: 100%;
+            flex-direction: column;
+            p{
+                margin: 0px;
+            }
+
+            &_counter {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+        &_remove-button{
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: colors.get-color("error", 7);
+            font-size: 16px;
+        }
+    }
+}

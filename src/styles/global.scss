@@ -1,7 +1,8 @@
-@use "./typography/index" as typography;
-@use "./components/index" as components;
-@use "./variables/index" as variables;
-@use "./pages/index" as pages;
+@use './typography/index' as typography;
+@use './components/index' as components;
+@use './variables/index' as variables;
+@use './pages/index' as pages;
+@use './utilities/index' as utilities;
 @use './variables/colors' as colors;
 
 html,

@@ -11,9 +11,8 @@ export default function AuthProvider({
   const navigate = useNavigate();
   const [user, setUser] = useState<string | null>("");
   const [token, setToken] = useState<string | null>(null);
-
   const [loading, setLoading] = useState<boolean>(false);
-
+  
   const countRef = useRef<number>(0);
 
   const login = useCallback(async (username: string, password: string) => {

@@ -14,4 +14,5 @@ export type IIconName =
   | "arrow-left"
   | "arrow-right"
   | "lupa"
-  | "heart";
+  | "heart"
+  | "cart";

@@ -1,11 +1,15 @@
 import Card from "@/components/card";
 import Category from "@/components/category";
+import useCart from "@/hooks/useCart";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [query, setQuery] = useState("");
   const { books } = useLocalStorage();
+  const {addBook} = useCart();
+  const navigate = useNavigate();
 
   // 🧠 Filtramos los libros que coincidan con el texto
   const filteredBooks = books.size
@@ -28,9 +32,10 @@ export default function Home() {
             filteredBooks.map((b, idx) => (
               <Card
                 key={idx}
-                title={b.title}
-                description={b.description}
-                isbn={b.isbn}
+                book={b}
+                onClick={() => {
+                  navigate(`/book/${b.isbn}`)
+                }}
               />
             ))
           ) : (

@@ -1,5 +1,8 @@
-export default function Cart() {
+import Cart from "@/components/cart";
+
+export default function CartPage() {
+
   return (
-    <h1>Carrito de busqueda</h1>
+    <Cart/>
   );
 }
