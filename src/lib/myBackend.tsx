@@ -138,6 +138,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "La historia de Elizabeth Bennet y el señor Darcy en una crítica social sobre la época georgiana.",
       price: 19,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/60/b3/60b3e7711e26b916eb87d493d544f3a3.jpg"
     },
     {
       id: 7,
