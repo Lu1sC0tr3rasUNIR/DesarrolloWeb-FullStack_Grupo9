@@ -10,4 +10,6 @@ export interface IInput {
     | 'file' | 'hidden' | 'checkbox' | 'radio' | 'range' | 'search'
     | 'submit' | 'reset' | 'button';
   icon?: IIconName;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

@@ -17,6 +17,7 @@ export default function StorageProvider({
   const [cart, setCart] = useState<Map<string, ICartItem>>(new Map());
   const [activeCart, setActiveCart] = useState<boolean>(false);
   const [totalValue, setTotalValue] = useState<number>(0);
+  const [filter, setFilter] = useState<string>("");
 
   const getBook = (isbn: string): IBooks | undefined => {
     return books.get(isbn);
@@ -66,6 +67,10 @@ export default function StorageProvider({
     }
   }, []);
 
+  const addFilter = useCallback((filter: string) => {
+    setFilter(filter);
+  }, []);
+
   const value: IStorageContext = useMemo(
     () => ({
       books,
@@ -77,7 +82,9 @@ export default function StorageProvider({
       updateCart,
       activeCart,
       setCartStatus,
-      totalValue
+      totalValue,
+      addFilter, 
+      filter
     }),
     [books, category, cart, addBook, removeBook, getBook, updateCart, activeCart, setCartStatus]
   );

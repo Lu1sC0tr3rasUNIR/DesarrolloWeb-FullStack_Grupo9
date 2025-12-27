@@ -14,4 +14,7 @@ export const StorageContext = createContext<IStorageContext>({
   updateCart: () => {},
   activeCart: false,
   setCartStatus: () => {},
+  addFilter: () => {},
+  filter: "",
+  totalValue: 0,
 });

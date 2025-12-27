@@ -5,21 +5,38 @@ import Navbar from "./navbar";
 import StorageProvider from "@/providers/StorageProvider";
 import CartBottom from "./cartBottom";
 import Cart from "./cart";
+import { useAuth } from "@/hooks/useAuth";
 
 interface LayoutProps {
   children: ReactNode;
+}
+
+function LayoutContent({ children }: LayoutProps) {
+  const { isAuthenticated } = useAuth();
+
+  return (
+    <>
+      {isAuthenticated && (
+        <Header>
+          <Navbar />
+        </Header>
+      )}
+      {children}
+      {isAuthenticated && (
+        <>
+          <CartBottom />
+          <Cart />
+        </>
+      )}
+    </>
+  );
 }
 
 export default function Layout({ children }: LayoutProps) {
   return (
     <AuthProvider>
       <StorageProvider>
-        <Header>
-          <Navbar />
-        </Header>
-        {children}
-        <CartBottom />
-        <Cart />
+        <LayoutContent>{children}</LayoutContent>
       </StorageProvider>
     </AuthProvider>
   );

@@ -1,10 +1,10 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { IBooks } from "@/interfaces/lib/myBackendInterface";
 import { ICartItem, IUseCart } from "@/interfaces/hooks/IUseCart";
 import useLocalStorage from "./useLocalStorage";
 
 export default function useCart(): IUseCart {
-  const { cart, updateCart, totalValue } = useLocalStorage();
+  const { cart, updateCart, totalValue, addFilter, filter } = useLocalStorage();
 
   //Funcion para agregar un libro al carrito
   const addBook = useCallback(
@@ -50,6 +50,7 @@ export default function useCart(): IUseCart {
     updateCart(new Map());
   }, [updateCart, totalValue, cart]);
 
+
   //Funcion para obtener el total de libros en el carrito
   const getTotalBooks = useCallback((): number => {
     let total = 0;
@@ -58,14 +59,17 @@ export default function useCart(): IUseCart {
     });
     return total;
   }, [cart, totalValue, updateCart]);
+  
   return {
     cartBooks: cart,
     totalValue,
+    addFilter,
     addBook,
     removeBook,
     updateBookQuantity,
     clearCart,
     getTotalBooks,
+    filter
   };
 }
 /*

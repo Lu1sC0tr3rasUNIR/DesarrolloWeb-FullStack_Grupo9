@@ -23,6 +23,12 @@ export default function Book() {
           <h2>{book.title}</h2>
           <p>{book.description}</p>
           <p>Precio: ${book.price}</p>
+          <p>ISBN: {book.isbn}</p>
+          <p>Autor: {book.author}</p>
+          <p>Categoría: {book.category}</p>
+          <p>
+            Editorial: {book.publisher} - Año: {book.year}
+          </p>
         </div>
       ) : (
         <p>Libro no encontrado.</p>

@@ -16,7 +16,7 @@ export default function Components() {
           <Button label="Guardar" variant="success" icon="check" />
           <Button label="Alerta" variant="alert" icon="info"></Button>
         </div>
-      </div>p
+      </div>
       <div className="component-section">
         <div className="component-group">
           <Counter count={0} />

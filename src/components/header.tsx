@@ -1,6 +1,7 @@
 import { useAuth } from "@/hooks/useAuth";
 import { ReactNode } from "react";
 import Input from "./input";
+import useCart from "@/hooks/useCart";
 
 type HeaderProps = {
   children?: ReactNode;
@@ -9,6 +10,7 @@ type HeaderProps = {
 
 export default function Header({ children, className = "" }: HeaderProps) {
   const { isAuthenticated } = useAuth();
+  const { filter, addFilter } = useCart();
 
   if (!isAuthenticated) {
     return <div />;
@@ -24,7 +26,10 @@ export default function Header({ children, className = "" }: HeaderProps) {
           <Input 
           //label="Text" 
           icon="lupa" 
-          type="text" placeholder="Buscar..." />
+          type="text" placeholder="Buscar..." 
+          value={filter}
+          onChange={(e) => addFilter(e.target.value)}
+          />
         </div>
         <div className="header-component-top_user">
           <p>Usuario</p>

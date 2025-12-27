@@ -33,8 +33,8 @@ export default function AuthProvider({
     setToken(null);
   }, []);
 
-  //const isAuthenticated = !!token;
-  const isAuthenticated = true;
+  const isAuthenticated = !!token;
+  //const isAuthenticated = true;
 
   const value = useMemo(
     () => ({
@@ -49,20 +49,21 @@ export default function AuthProvider({
   );
 
   useEffect(() => {
-    /*
+    
     if (!isAuthenticated) {
-      navigate("/login");
+      navigate("/");
     }
 		console.log("AuthProvider useEffect - isAuthenticated:", isAuthenticated);
     const interval = setInterval(() => {
       countRef.current += 1;
       if (!isAuthenticated && countRef.current === 5) {
-        navigate("/");
+        setToken("UUID-TOKEN-MOCK");
+        navigate("/home");
       }
     }, 1000);
 
     return () => clearInterval(interval);
-    */
+    
   }, [isAuthenticated, navigate]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -13,4 +13,6 @@ export interface IStorageContext {
   activeCart: boolean;
   setCartStatus: () => void;
   totalValue: number;
+  addFilter: (filter: string) => void;
+  filter: string;
 }

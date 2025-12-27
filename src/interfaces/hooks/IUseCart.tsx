@@ -8,6 +8,8 @@ export interface IUseCart {
     clearCart: () => void;
     getTotalBooks: () => number;
     totalValue: number;
+    addFilter: (filter: string) => void;
+    filter: string;
 }
 
 export interface ICartItem {

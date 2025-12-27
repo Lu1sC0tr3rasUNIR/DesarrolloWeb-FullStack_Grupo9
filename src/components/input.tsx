@@ -8,6 +8,8 @@ export default function Input({
   placeholder = "",
   type = "text",
   icon,
+  value,
+  onChange
 }: IInput) {
   const generatedId = useId();
   const inputId = id ?? `input-${generatedId}`;
@@ -37,6 +39,8 @@ export default function Input({
         style={icon ? {} : {}}
         placeholder={placeholder}
         type={type}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );

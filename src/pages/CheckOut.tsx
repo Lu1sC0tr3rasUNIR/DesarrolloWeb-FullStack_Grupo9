@@ -28,7 +28,7 @@ export default function CheckOut() {
         icon="check"
         onClick={() => {
           clearCart();
-          navigate(`/`);
+          navigate(`/home`);
         }}
       />
     </div>
