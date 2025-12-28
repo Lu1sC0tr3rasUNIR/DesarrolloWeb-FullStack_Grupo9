@@ -155,6 +155,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una niña narra la lucha de su padre, un abogado, por defender a un hombre negro injustamente acusado.",
       price: 22,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/1b/d7/1bd7b432c94ccdcf816c917d8abe8e83.jpg"
     },
     {
       id: 8,
@@ -171,6 +172,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un fraile franciscano investiga una serie de asesinatos en una abadía medieval.",
       price: 24,
+      image: "https://librerialerner.vtexassets.com/arquivos/ids/1887005/principal.gif?v=638625404284000000"
     },
     {
       id: 9,
@@ -187,6 +189,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Bilbo Bolsón emprende una aventura inesperada junto a enanos para recuperar un tesoro custodiado por un dragón.",
       price: 23,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/41/6e/416eeb7550b8e2c7ef26aecaa2af460b.jpg"
     },
     {
       id: 10,
@@ -203,6 +206,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Jean Valjean busca redención mientras es perseguido por el implacable inspector Javert.",
       price: 33,
+      image: "https://www.anayainfantilyjuvenil.com/images/libros/grande/9788469866405-los-miserables-clasicos-a-medida.jpg"
     },
     {
       id: 11,
@@ -219,6 +223,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una novela abierta que invita al lector a decidir el orden de lectura y a reflexionar sobre la existencia.",
       price: 26,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/90/53/905322d10841b36aa311dbd5c90d92ed.jpg"
     },
     {
       id: 12,
@@ -235,6 +240,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una sociedad futurista donde los libros están prohibidos y los bomberos los queman.",
       price: 20,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/23/e3/23e3b0699ae46fc450e85f4354328c3a.jpg"
     },
     {
       id: 13,
@@ -251,6 +257,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un joven descubre un libro maldito que cambia su vida en la Barcelona de la posguerra.",
       price: 28,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/97/a9/97a9e0ef37c3b33e9303147883d03372.jpg"
     },
     {
       id: 14,
@@ -267,6 +274,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un grupo de amigos enfrenta a una entidad maligna que toma la forma de un payaso llamado Pennywise.",
       price: 29,
+      image: "https://i.redd.it/it-book-cover-v0-helamqh24s9f1.jpg?width=1600&format=pjpg&auto=webp&s=f072267b33abd9f638f7461974d61fdb9df69d1c"
     },
     {
       id: 15,
@@ -283,6 +291,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Santiago, un joven pastor, emprende un viaje en busca de su leyenda personal y del verdadero tesoro de la vida.",
       price: 17,
+      image: "https://www.planetadelibros.com.co/usuaris/libros/fotos/402/original/401512_portada_el-alquimista_barry-kitson_202404031526.jpg"
     },
     {
       id: 16,
@@ -299,6 +308,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Katniss Everdeen debe sobrevivir a un mortal torneo televisado donde solo uno puede quedar con vida.",
       price: 19,
+      image:"https://images.cdn3.buscalibre.com/fit-in/360x360/0b/33/0b33dc8290d82650f4ace5fb92a4f9aa.jpg"
     },
     {
       id: 17,
@@ -315,6 +325,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "El profesor Langdon descubre una conspiración relacionada con el Santo Grial y sociedades secretas.",
       price: 25,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/b2/ea/b2ea9b952f3b468a2ff88058bd9e3575.jpg"
     },
     {
       id: 18,
@@ -331,6 +342,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Las aventuras de Ulises al intentar regresar a Ítaca tras la guerra de Troya.",
       price: 22,
+      image: "https://www.loqueleo.com/do/uploads/2021/08/resized/600_portada-la-odisea.jpg",
     },
     {
       id: 19,
@@ -347,6 +359,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "El conde Drácula intenta trasladarse a Inglaterra mientras un grupo de personas intenta detenerlo.",
       price: 18,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/76/dc/76dc4380329a0f6f3d38ae712e5407ac.jpg",
     },
     {
       id: 20,
@@ -363,6 +376,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Frodo emprende una misión para destruir el Anillo Único y evitar que caiga en manos del mal.",
       price: 35,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/88/13/8813e98d85a1ec7cdae072c6d74a85b2.jpg"
     },
 
 {
@@ -380,6 +394,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Saga familiar donde lo sobrenatural y lo político se entrelazan en varias generaciones.",
       price: 24,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/bf/30/bf3012b29b7a91ec9442ae13e90d7b4c.jpg"
     },
     {
       id: 22,
@@ -396,6 +411,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una reflexión sobre el amor, la libertad y el peso de las decisiones durante la Primavera de Praga.",
       price: 21,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/12/ef/12ef4b408a941a1cc37171bd3c70bf3f.jpg"
     },
     {
       id: 23,
@@ -412,10 +428,11 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una niña encuentra refugio en los libros mientras el mundo a su alrededor se desmorona.",
       price: 23,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYCSVae4s7D0EG8HbqvQZj9lt9GeWjgHoM7A&s"
     },
     {
       id: 24,
-      title: "Neuromante",
+      title: "Neuromancer",
       author: "William Gibson",
       category: ["Ciencia ficción", "Cyberpunk", "Ficción"],
       year: 1984,
@@ -428,6 +445,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un hacker fracasado es reclutado para una última misión que redefine la frontera entre humanos y máquinas.",
       price: 18,
+      image: "https://www.ccyberdark.net/wp-content/uploads/2021/05/Neuromancer.jpeg"
     },
     {
       id: 25,
@@ -444,6 +462,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Dos amantes esperan décadas para reencontrarse y vivir un amor aplazado por toda una vida.",
       price: 24,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/b0/f6/b0f63d2e281c266b3a13f0cc0162e98b.jpg"
     },
     {
       id: 26,
@@ -460,6 +479,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un joven emprende un viaje espiritual en busca del sentido de la existencia.",
       price: 14,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/b7/85/b785119a93d5e15d7ad5e3e138606417.jpg"
     },
     {
       id: 27,
@@ -476,6 +496,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un padre y su hijo cruzan un mundo postapocalíptico aferrándose a la esperanza.",
       price: 19,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/4a/ed/4aedcccd7a54a8010d12c33c3dcf5693.jpg"
     },
     {
       id: 28,
@@ -492,6 +513,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un hombre con un sentido del olfato extraordinario busca crear la esencia perfecta.",
       price: 20,
+      image: "https://cdn.culturagenial.com/es/imagenes/perfume-cke.jpg?class=article"
     },
     {
       id: 29,
@@ -508,6 +530,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un joven vende su alma por la eterna juventud mientras su retrato revela su verdadera corrupción.",
       price: 16,
+      image: "https://www.penguinlibros.com/co/6774473-large_default/el-retrato-de-dorian-gray-los-mejores-clasicos.webp"
     },
     {
       id: 30,
@@ -524,6 +547,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un terapeuta es amenazado por un misterioso enemigo que lo obliga a descifrar un rompecabezas mortal.",
       price: 22,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/42/e3/42e3e26ee9f47cdafd49928009971990.jpg"
     },
     {
       id: 31,
@@ -540,6 +564,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un pescador lucha contra un gigantesco pez y contra su propia resistencia en el mar.",
       price: 14,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/e8/5b/e85b3df2fa6464f31299965619563eb0.jpg"
     },
     {
       id: 32,
@@ -556,6 +581,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una familia lucha por sobrevivir durante la Gran Depresión en busca de una vida digna.",
       price: 22,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/cc/6f/cc6f7def05225c03b5010fbd7893a71e.jpg"
     },
     {
       id: 33,
@@ -572,6 +598,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un joven narra sus días de confusión, rebeldía y búsqueda de identidad en Nueva York.",
       price: 18,
+      image: "https://cdn.culturagenial.com/es/imagenes/el-guardian-entre-el-centeno.jpg?class=article"
     },
     {
       id: 34,
@@ -588,6 +615,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una joven agente del FBI acude a un brillante asesino para capturar a otro criminal.",
       price: 20,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/11/7a/117a1d3904bcf7ba058a6f60195bb495.jpg"
     },
     {
       id: 35,
@@ -604,6 +632,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un científico logra volverse invisible, con consecuencias fuera de su control.",
       price: 17,
+      image: "https://www.tornamesa.co/imagenes/9788419/978841959908.GIF"
     },
     {
       id: 36,
@@ -620,6 +649,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una mujer presencia algo inquietante desde un tren y se ve envuelta en un caso criminal.",
       price: 21,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/a9/dd/a9dd9755bde59005eb4421bb1f061bcc.jpg"
     },
     {
       id: 37,
@@ -636,6 +666,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un joven compite en un mundo virtual lleno de acertijos para obtener una fortuna.",
       price: 19,
+      image: "https://miro.medium.com/v2/resize:fit:1400/1*rmSAlvrcvZqTlg161SCq0Q.jpeg"
     },
     {
       id: 38,
@@ -652,6 +683,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "En un régimen totalitario, las mujeres fértiles son obligadas a servir como reproductoras.",
       price: 22,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/f3/c9/f3c9b4e6308b7efefb72681b646294a0.jpg"
     },
     {
       id: 39,
@@ -668,6 +700,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "En los túneles del metro de Moscú, los supervivientes luchan contra monstruos y facciones rivales.",
       price: 23,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/27/78/277874092cc48fa66180c2d695082a80.jpg"
     },
     {
       id: 40,
@@ -684,6 +717,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una portera y una niña genio ocultan su mundo intelectual mientras cuestionan la vida cotidiana.",
       price: 20,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/ce/ee/ceee3e0139fb28fabed0ef2f954da249.jpg"
     },
 
 {
@@ -701,6 +735,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Hans Castorp descubre un mundo introspectivo en un sanatorio alpino donde el tiempo parece detenerse.",
       price: 28,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/75/56/7556ee308c4a24d1a4ea1be13b9ee928.jpg"
     },
     {
       id: 42,
@@ -717,6 +752,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "La decadencia de la familia Compson contada a través de múltiples voces y perspectivas.",
       price: 21,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyVg6uN4VZyF35L62NXzK7h_VG04lOgGp-OA&s"
     },
     {
       id: 43,
@@ -733,6 +769,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Las aventuras de un viajero que resuelve enigmas matemáticos con ingenio y creatividad.",
       price: 17,
+      image: "https://imagessl7.casadellibro.com/a/l/s5/77/9788498670677.webp"
     },
     {
       id: 44,
@@ -749,6 +786,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "La vida de un arquitecto atrapado entre tensiones políticas y amores imposibles antes de la Guerra Civil Española.",
       price: 30,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/04/04/0404c94cac84ab884c752bb17c3e54fc.jpg"
     },
 
 {
@@ -766,6 +804,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un oficinista viudo encuentra inesperadamente la posibilidad del amor en su rutinaria vida.",
       price: 16,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/1d/f4/1df4038c647fdb8272795f535b40ce08.jpg"
     },
     {
       id: 46,
@@ -782,6 +821,8 @@ export const myBackend = (): IBooks[] => {
       description:
         "La vida de un lobo domesticado que lucha por sobrevivir entre la dureza de la naturaleza y la crueldad humana.",
       price: 15,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM8quBeXrMrOQtdmaA8TV4PLsfACD8J3Dmgw&s"
+
     },
     {
       id: 47,
@@ -798,6 +839,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una épica historia sobre la construcción de una catedral en la Inglaterra medieval.",
       price: 32,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS47kYVeVuMfPxxrkgPyou3wFpsosvKhi4MwA&s"
     },
     {
       id: 48,
@@ -814,6 +856,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un hombre recuerda su juventud marcada por el amor, la pérdida y la fragilidad emocional.",
       price: 19,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/a6/75/a6752f915dc42e51a82057c2224566e4.jpg"
     },
     {
       id: 49,
@@ -830,6 +873,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Meursault enfrenta las consecuencias de su indiferencia ante el mundo y los acontecimientos.",
       price: 14,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/0d/24/0d24d29aed197876e4ce72ac016818dc.jpg"
     },
     {
       id: 50,
@@ -846,6 +890,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "La trágica historia de un millonario obsesionado con recuperar un amor perdido.",
       price: 18,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/33/c2/33c26accef7bc42dc170cdea96da543b.jpg"
     },
     {
       id: 51,
@@ -862,6 +907,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un agrimensor lucha por obtener acceso a un misterioso castillo cuyos funcionarios son inalcanzables.",
       price: 19,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/82/3a/823a642b582bfe1bcf78b5e1107d4ba6.jpg"
     },
     {
       id: 52,
@@ -878,6 +924,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una niña descubre un jardín oculto que transforma su vida y la de quienes la rodean.",
       price: 14,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/04/10/0410be3dff53a4285f6e71968869f160.jpg"
     },
     {
       id: 53,
@@ -894,6 +941,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Cuatro hermanos descubren un mundo mágico gobernado por criaturas fantásticas y un malvado invierno eterno.",
       price: 17,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/a6/41/a641e8ed5d48d1bf117adf1a374ce82a.jpg"
     },
     {
       id: 54,
@@ -910,6 +958,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un joven inglés viaja al mundo islámico medieval para convertirse en médico.",
       price: 25,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/24/0b/240b0caebb7151e284a037d6ff62ba23.jpg"
     },
     {
       id: 55,
@@ -926,6 +975,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Lisbeth Salander se enfrenta a una oscura red de corrupción mientras su vida vuelve a estar en peligro.",
       price: 26,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQTAz-Z4bFsDM3KWr2FdT_JPZSMEAAa0aDqA&s"
     },
     {
       id: 56,
@@ -942,6 +992,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un periodista y una hacker investigan la desaparición de una mujer ocurrida décadas atrás.",
       price: 25,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/85/0d/850d0196b30b19ad901ca20022a0f2bf.jpg"
     },
     {
       id: 57,
@@ -958,6 +1009,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Tres historias entrelazadas que juegan con la identidad, el lenguaje y la realidad.",
       price: 23,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/3b/0d/3b0d17a41de97637c3fdc33aaf2bef87.jpg"
     },
     {
       id: 58,
@@ -974,24 +1026,26 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un joven tutor lucha contra su obsesión por el juego y sus pasiones personales.",
       price: 18,
-    },
-    {
-      id: 59,
-      title: "La carretera de Cormac",
-      author: "Cormac McCarthy",
-      category: ["Drama", "Distopía", "Ficción"],
-      year: 1979,
-      genre: "Drama existencial",
-      pages: 219,
-      publisher: "Random House",
-      language: "Inglés",
-      isbn: "9780307386458",
-      tags: ["drama", "existencialismo", "dureza"],
-      description:
-        "Una historia cruda donde los personajes atraviesan una vida marcada por pérdidas y decisiones duras.",
-      price: 17,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLMMDTDnekcsD7yZ-oQvd4LnFMJQSMOtQa0A&s"
     },
 
+    {
+      id: 59,
+      title: "El mapa del cielo",
+      author: "Félix J. Palma",
+      category: ["Ciencia ficción", "Aventura", "Fantasía"],
+      year: 2012,
+      genre: "Fantasía científica",
+      pages: 592,
+      publisher: "Plaza & Janés",
+      language: "Español",
+      isbn: "9788401343040",
+      tags: ["ciencia ficción", "aventura", "victoriano"],
+      description:
+        "Una historia que mezcla ciencia ficción y misterio mientras sus personajes enfrentan sucesos inexplicables que desafían la realidad.",
+      price: 24,
+      image: "https://www.planetadelibros.com.co/usuaris/libros/fotos/400/original/portada_el-mapa-del-cielo-trilogia-victoriana-2_felix-j-palma_202404161711.jpg",
+    },
     {
       id: 60,
       title: "La plaza del diamante",
@@ -1007,6 +1061,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Colometa narra su vida marcada por la Guerra Civil Española y las duras condiciones de la época.",
       price: 20,
+      image: "https://imagessl0.casadellibro.com/a/l/s5/30/9788411827430.webp"
     },
 
     {
@@ -1024,6 +1079,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "El príncipe Mishkin se enfrenta al choque entre su bondad y la corrupción del mundo moderno.",
       price: 27,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/01/f3/01f3bcb19eaa952a48b7e87698d6b181.jpg"
     },
 
     {
@@ -1041,6 +1097,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Gregor Samsa despierta convertido en insecto, enfrentando el rechazo familiar y su propia angustia.",
       price: 12,
+      image: "https://www.tornamesa.co/imagenes/9788446/978844605473.GIF"
     },
 
     {
@@ -1058,6 +1115,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una sociedad futurista aparentemente perfecta donde la estabilidad tiene un oscuro precio.",
       price: 18,
+      image: "https://images.cdn1.buscalibre.com/fit-in/520x520/c1/8c/c18cdeb80fa6f9a212a1cc5639e94c6d.jpg"
     },
 
     {
@@ -1075,6 +1133,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "El capitán Nemo guía al Nautilus en un viaje extraordinario bajo los mares del mundo.",
       price: 19,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK5WhAg2tXvz6iN_UvF9GdA1Sk8qEO-Zx5Ug&s"
     },
 
     {
@@ -1092,6 +1151,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Buck, un perro raptado de su hogar, debe adaptarse a la vida salvaje del norte helado.",
       price: 15,
+      image:"https://www.loqueleo.es/uploads/2022/07/9788491223979-la-llamada-de-lo-salvaje.jpg"
     },
 
     {
@@ -1109,6 +1169,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Dos jóvenes poetas desaparecen dejando un rastro de historias que narran quienes los conocieron.",
       price: 27,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/21/c2/21c242a51f3a9fe0c44ce4ea8d30dd58.jpg"
     },
 
     {
@@ -1126,6 +1187,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un niño se adentra en un libro mágico que lo convierte en protagonista de un mundo en peligro.",
       price: 22,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/5a/b9/5ab929fcb1c7b7780309752e16ff3911.jpg"
     },
 
     {
@@ -1143,6 +1205,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Kvothe narra la historia de su vida: magia, tragedia y búsqueda del conocimiento.",
       price: 29,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/aa/cc/aacc1e2d359a74f3efb144b8ab8f790f.jpg"
     },
 
     {
@@ -1160,6 +1223,8 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un astronauta queda atrapado en Marte y usa su ingenio para sobrevivir.",
       price: 24,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/0b/03/0b030e9492a3e45ebd24d33d77467e08.jpg"
+
     },
 
     {
@@ -1177,6 +1242,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "A través de mundos separados, un misterioso viajero investiga un conflicto ancestral entre razas.",
       price: 21,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJlN5QEWQN2U_i7Fm9PNCSVq6bh8NZkii7w&s"
     },
 
     {
@@ -1194,6 +1260,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "La historia de un siervo en la Barcelona medieval que lucha por su libertad.",
       price: 26,
+      image: "https://www.penguinlibros.com/co/5393555/la-catedral-del-mar.jpg"
     },
 
     {
@@ -1211,6 +1278,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una joven noble vive entre conspiraciones y secretos durante las Cruzadas.",
       price: 24,
+      image: "https://imagessl9.casadellibro.com/a/l/s5/49/9788427034549.webp"
     },
 
     {
@@ -1228,6 +1296,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un recorrido por la historia de la humanidad desde sus orígenes hasta la modernidad.",
       price: 31,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpBevEC2RI4TzbWiVfR1JMxYXXUaQZx5Ql7g&s"
     },
 
     {
@@ -1245,6 +1314,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un análisis de las tendencias tecnológicas y cómo podrían transformar el futuro humano.",
       price: 32,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/21/7d/217df914d30a75624201e6124aefa51e.jpg"
     },
 
     {
@@ -1262,6 +1332,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "La dura vida en un colegio militar peruano revela la violencia y la crudeza de la institución.",
       price: 20,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/04/97/0497843aaba916128e3617a02b9a7583.jpg"
     },
 
     {
@@ -1279,6 +1350,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un periodista reflexiona sobre la corrupción y el poder en el Perú mientras reconstruye su pasado.",
       price: 26,
+      image: "https://image.cdn0.buscalibre.com/5b57a6c21dc8618c328b4568.__RS360x360__.jpg"
     },
 
     {
@@ -1296,6 +1368,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una compleja obra satírica que retrata adicciones, entretenimiento y vacío existencial.",
       price: 35,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk_g47webP_yGUios6NpVs5lTvHranV0fI2g&s"
     },
 
     {
@@ -1313,6 +1386,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un navegante europeo naufraga en Japón y se ve envuelto en luchas de poder entre señores feudales.",
       price: 33,
+      image: "https://pendulo.com/imagenes_grandes/9798212/979821289519.GIF"
     },
 
     {
@@ -1330,6 +1404,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Paul Atreides enfrenta conflictos políticos, ecológicos y espirituales en un planeta desértico.",
       price: 30,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIwCFQnOP_q5wg-hkd9ssYUQShVBWD_BRigA&s"
     },
 
     {
@@ -1347,6 +1422,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "La caída de un imperio galáctico impulsa un plan matemático para preservar el conocimiento humano.",
       price: 20,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3_C_0n51R5KBPkfvpiiYefzZIQ3SjAQsqww&s"
     },
 
     {
@@ -1364,6 +1440,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "La historia de Aquiles y Patroclo reimaginada desde una perspectiva íntima y emocional.",
       price: 22,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/62/2a/622a5056bcae6768c6461ea5d156b25c.jpg"
     },
 
     {
@@ -1381,6 +1458,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "La vida de Circe, hija del dios Helios, en un relato que mezcla magia, tragedia y libertad.",
       price: 24,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/50/ec/50ec806b0997aa1b2cd6e9bd81250776.jpg"
     },
 
     {
@@ -1398,6 +1476,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un fugitivo llega a una isla donde nada es lo que parece gracias a una misteriosa máquina.",
       price: 18,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/d6/1e/d61e1e190321819e8e63150d4e62a639.jpg"
     },
 
     {
@@ -1415,6 +1494,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un psicólogo estudia un planeta viviente que confronta a los humanos con sus recuerdos más profundos.",
       price: 21,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/b9/6a/b96a341f774d5c7b56b1f74863fa41c3.jpg"
     },
 
     {
@@ -1432,6 +1512,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Dos historias paralelas se entrelazan en un viaje simbólico lleno de enigmas y metáforas.",
       price: 26,
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/ae/fa/aefadf196fc977aaaf382e37d17c3970.jpg"
     },
 
     {
@@ -1449,6 +1530,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una historia intensa que muestra las sombras morales y psicológicas de la Guerra de Vietnam.",
       price: 28,
+      image: "https://image.cdn1.buscalibre.com/60e395758463b5f3158bc3b6.RS500x500.jpg"
     },
 
     {
@@ -1466,6 +1548,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "La historia de dos amigas cuya relación evoluciona en la Italia pobre de la posguerra.",
       price: 21,
+      image: "https://www.tornamesa.co/imagenes/9788426/978842642459.GIF"
     },
 
     {
@@ -1483,6 +1566,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un exconvicto se ve envuelto en una guerra entre dioses antiguos y modernos en Estados Unidos.",
       price: 23,
+      image: "https://images.cdn3.buscalibre.com/fit-in/360x360/1b/21/1b215e945d4f23fb56a2b0cd039c81d2.jpg"
     },
 
     {
@@ -1500,6 +1584,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una novela que mezcla viajes temporales, Londres victoriano y las ideas de H. G. Wells.",
       price: 25,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-qgp8L6fh4vvC7ilp4k1s2yfLafNXbQgR6A&s"
     },
 
     {
@@ -1517,6 +1602,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un arqueólogo descubre una biblioteca que contiene las fechas de muerte de todas las personas del mundo.",
       price: 23,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLBob55H7V4giCMFQutkpqinlkP-jqdzw7EA&s"
     },
   ];
 };
