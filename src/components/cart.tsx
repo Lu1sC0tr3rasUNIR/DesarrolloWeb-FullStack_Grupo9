@@ -14,7 +14,7 @@ export default function Cart() {
 
   return (
     <div className="cart-container">
-      <h1>Cart</h1>
+      <h1>Carrito</h1>
       {booksInCart.length === 0 ? (
         <p>El carrito está vacío.</p>
       ) : (
@@ -31,7 +31,7 @@ export default function Cart() {
       )}
       <p>Total a pagar: ${totalValue}</p>
       <Button
-        label="Proceed to Checkout"
+        label="Ir al resumen de compra"
         onClick={() => {
           setCartStatus();
           navigate(`/checkout`);

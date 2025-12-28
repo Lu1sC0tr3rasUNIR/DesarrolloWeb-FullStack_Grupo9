@@ -9,7 +9,7 @@ export default function CheckOut() {
   const navigate = useNavigate();
   return (
     <div className="checkout-page">
-      <h1>CheckOut Page</h1>
+      <h1>Resumen de compra</h1>
       <div className="checkout-items">
         {Array.from(cart.values()).map((item) => (
           <div key={item.book.id} className="checkout-item">

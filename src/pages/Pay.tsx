@@ -12,12 +12,12 @@ export default function Pay() {
   
   return (
     <div>
-      <h1>Página de Pago</h1>
+      <h1>Página de pago</h1>
       <Input
-        label="Número de Tarjeta"
-        placeholder="Ingrese su número de tarjeta"
+        label="Número de tarjeta"
+        placeholder="Ingresa tu número de tarjeta"
       />
-      <Input label="Fecha de Expiración" placeholder="MM/AA" />
+      <Input label="Fecha de expiración" placeholder="MM/AA" />
       <Input label="CVV" placeholder="Código de seguridad" />
       <Checkbox
         checked={checked}

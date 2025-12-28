@@ -2,6 +2,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { ReactNode } from "react";
 import Input from "./input";
 import useCart from "@/hooks/useCart";
+import Icons from "./icons";
 
 type HeaderProps = {
   children?: ReactNode;
@@ -32,6 +33,7 @@ export default function Header({ children, className = "" }: HeaderProps) {
           />
         </div>
         <div className="header-component-top_user">
+          <Icons name="user" />
           <p>Usuario</p>
         </div>
       </div>

@@ -10,6 +10,7 @@ export interface IBooks {
   language: string;
   isbn: string;
   description: string;
+  image?: string;
   price?: number;
   stock?: number;
   tags?: string[];

@@ -15,11 +15,14 @@ body {
   box-sizing: border-box;
 }
 body {
-  min-height: 100dvh; /* usa unidades dinámicas modernas */
+  min-height: 100dvh; 
 }
 
-input {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
   color: colors.get-color("paper", 7);
 }
 

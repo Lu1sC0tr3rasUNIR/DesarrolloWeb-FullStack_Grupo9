@@ -2,20 +2,21 @@
 @use '../variables/_colors.scss' as colors;
 
 .card {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 450px;            /* altura total de la tarjeta */
-  border: none;
-  border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid colors.get-color("paper", 3);
+  border-radius: 14px;
+  background-color: colors.get-color("paper", 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   overflow: hidden;          /* recorta desbordes externos */
-  transition: all 0.3s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
   display: flex;
   flex-direction: column;
   min-height: 0;             /* ⬅️ permite que los hijos flex se encojan */
 
   &:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transform: translateY(-4px);
   }
 
@@ -26,7 +27,7 @@
   justify-content: center;  /* centra horizontalmente */
   width: 100%;
   height: 180px;            /* ⬅️ AJUSTA aquí (160–220px según tu gusto) */
-  background: colors.get-color('paper', 2);
+  background: colors.get-color("paper", 2);
   overflow: hidden;
 
   img {
@@ -43,8 +44,7 @@
 
   .card_header {
     padding: 16px 20px;
-    background: colors.get-color('paper', 5);
-    color: white;
+    color: colors.get-color("paper", 8);
     flex: 0 0 auto;
 
     h2 {
@@ -83,7 +83,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 16px;
-    border-top: 2px solid colors.get-color('paper', 3);
+    border-top: 1px solid colors.get-color('paper', 3);
     color: colors.get-color('paper', 7);
     flex: 0 0 auto;          /* ⬅️ no crecer */
 
@@ -91,6 +91,7 @@
       margin: 0;
       font-size: 12px;
       font-weight: 600;
+      color: colors.get-color("paper", 8);
     }
 
     button {

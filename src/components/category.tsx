@@ -8,7 +8,7 @@ export default function Category() {
   return (
     <div className="category-container">
       <div className="category-container_inner">
-        <p>Categorias destacadas</p>
+        <p>Categorías destacadas</p>
       </div>
       <div className="category-container_list">
         {Array.from(category.values()).map((cat, idx) => (
@@ -17,8 +17,8 @@ export default function Category() {
       </div>
       <div className="category-container_subscription">
         <p>
-          iMantente en contacto! Únete a nuestro boletín y no te pierdas de
-          ningún lanzamiento.
+          ¡Mantente en contacto! Únete a nuestro boletín y no te pierdas ningún
+          lanzamiento.
         </p>
         <Input placeholder="Ingresa tu correo electrónico" />
         <Button label="Suscribirse" />       

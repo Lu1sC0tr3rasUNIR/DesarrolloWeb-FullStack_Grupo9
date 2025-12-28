@@ -12,8 +12,6 @@ export default function Card({ book, onClick }: ICard) {
     addBook(book, 1);
   };
 
-  const hasImage = Boolean(book.img);
-
   return (
     <div className="card" onClick={onClick}>
       {/* Imagen de portada */}
@@ -42,6 +40,7 @@ export default function Card({ book, onClick }: ICard) {
           label="Agregar"
           className="w-100"
           icon="plus"
+          iconColor="white"
           onClick={buttonClick}
         />
       </div>

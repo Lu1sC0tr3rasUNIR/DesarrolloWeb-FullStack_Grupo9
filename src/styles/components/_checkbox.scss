@@ -3,16 +3,33 @@
 .checkbox-container {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 16px;
+  gap: 8px;
+  font-size: 14px;
   user-select: none;
   color: colors.get-color("paper", 7);
+
   input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    border: 1px solid colors.get-color("paper", 5);
+    background: #fff;
     margin: 0;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.18s ease, border-color 0.18s ease,
+      box-shadow 0.18s ease;
   }
+
+  input[type="checkbox"]:checked {
+    background: colors.get-color("primary", 3);
+    border-color: colors.get-color("primary", 3);
+    box-shadow: 0 0 0 3px rgba(48, 86, 105, 0.25);
+  }
+
   &:hover {
     color: colors.get-color("paper", 5);
   }

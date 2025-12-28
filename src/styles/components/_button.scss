@@ -2,67 +2,51 @@
 @use '../variables/_colors.scss' as colors;
 
 .button-base {
-  padding: 5px 15px;
-  border-radius: 5px;
-  font-size: 16px;
+  padding: 9px 16px;
+  border-radius: 4px;
+  font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: 700;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  transition: background-color 0.16s ease, box-shadow 0.16s ease;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+
+  &:hover:not(:disabled) {
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
+  }
+
+  &:active:not(:disabled) {
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.18);
+  }
 }
 
 .base {
-  background-color: white;
+  background-color: colors.get-color('paper', 1);
   color: colors.get-color('paper', 7);
 }
 
 .primary {
-  background-color: colors.get-color('paper', 1);
-  border: 2px solid colors.get-color('paper', 7);
-  color: colors.get-color('paper', 7);
-  box-shadow: colors.get-color('paper', 5) 2px 2px 1px;
-
-  &:hover {
-    background-color: colors.get-color('paper', 4);
-  }
+  background-color: #415A77; // botón principal de la paleta
+  color: #E0E1DD;
 }
 
 .danger {
-  background-color: colors.get-color('paper', 1);
-  border: 2px solid colors.get-color('paper', 7);
-  color: colors.get-color('paper', 7);
-  box-shadow: colors.get-color('paper', 5) 2px 2px 1px;
-
-
-  &:hover {
-    background-color: colors.get-color('paper', 4);
-  }
+  background-color: colors.get-color('danger', 100);
+  color: colors.get-color('paper', 1);
 }
 
 .success {
-  background-color: colors.get-color('paper', 1);
-  border: 2px solid colors.get-color('paper', 7);
-  color: colors.get-color('paper', 7);
-  box-shadow: colors.get-color('paper', 5) 2px 2px 1px;
-
-
-  &:hover {
-    background-color: colors.get-color('paper', 4);
-  }
+  background-color: colors.get-color('success', 100);
+  color: colors.get-color('paper', 1);
 }
 
 .alert {
-  background-color: colors.get-color('paper', 1);
-  border: 2px solid colors.get-color('paper', 7);
+  background-color: colors.get-color('warning', 100);
   color: colors.get-color('paper', 7);
-  box-shadow: colors.get-color('paper', 5) 2px 2px 1px;
-
-
-  &:hover {
-    background-color: colors.get-color('paper', 4);
-  }
 }
 
 .button-icon {
