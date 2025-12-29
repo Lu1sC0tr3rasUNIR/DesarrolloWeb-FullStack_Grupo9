@@ -1,46 +1,53 @@
-@use "../variables/_colors.scss" as colors;
+.cart-item {
+  display: grid;
+  grid-template-columns: 120px 1fr 160px;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: center;
+}
 
+/* IMAGEN */
+.cart-item-image img {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
 
-.cart-item{
-    &-container{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 10px;
-        gap: 20px;
-        width: 60%;
+/* INFO DEL LIBRO */
+.cart-item-info h3 {
+  margin: 0 0 10px 0;
+}
 
+.cart-item-counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
 
-        &_image{
-            width: 120px;
-            height: 160px;
-            border: 2px solid colors.get-color("paper", 5);
-            object-fit: cover;
-            border-radius: 8px;
-        }
+/* SUBTOTAL */
+.cart-item-subtotal {
+  margin-top: 10px;
+  font-weight: 600;
+}
 
-        &_info {
-            border: 1px solid red;
-            display: flex;
-            gap: 5px;
-            width: 100%;
-            flex-direction: column;
-            p{
-                margin: 0px;
-            }
+/* BOTÓN REMOVER */
+.cart-item-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-            &_counter {
-                display: flex;
-                gap: 10px;
-                align-items: center;
-            }
-        }
-        &_remove-button{
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: colors.get-color("error", 7);
-            font-size: 16px;
-        }
-    }
+/* RESPONSIVE ITEM */
+@media (max-width: 768px) {
+  .cart-item {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .cart-item-actions {
+    justify-content: flex-start;
+  }
 }

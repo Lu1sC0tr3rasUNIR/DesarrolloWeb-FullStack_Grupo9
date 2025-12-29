@@ -6,40 +6,59 @@ import Button from "./button";
 export default function CartItem({ book, quantity, value }: ICartItem) {
   const { updateBookQuantity, removeBook } = useCart();
 
-  const handleAdd = (newQuantity: number) => {
-    const updatedQuantity = newQuantity + 1;
-    updateBookQuantity(book.id, updatedQuantity);
+  /* +1 */
+  const handleAdd = () => {
+    updateBookQuantity(book.isbn, quantity + 1);
   };
 
-  const handleRemove = (newQuantity: number) => {
-    const updatedQuantity = newQuantity - 1;
-    if (updatedQuantity < 1) return;
-    updateBookQuantity(book.id, updatedQuantity);
+  /* -1 (no baja de 1) */
+  const handleRemove = () => {
+    if (quantity <= 1) return;
+    updateBookQuantity(book.isbn, quantity - 1);
   };
 
-  const removeBookFromCart = () => {
-    // Logic to remove book from cart
-    removeBook(book.id);
-  }
+  /* eliminar libro del carrito */
+  const handleRemoveBook = () => {
+    removeBook(book.isbn);
+  };
 
   return (
-    <div className="cart-item-container">
-      <div className="cart-item-container_image"></div>
-      <div className="cart-item-container_info">
-        <h2>{book.title}</h2>
-        <div className="cart-item-container_info_counter">
-          <p>Unidades:</p>
+    <div className="cart-item">
+      {/* IMAGEN */}
+      <div className="cart-item-image">
+        <img
+          src={book.image || "https://via.placeholder.com/120x160"}
+          alt={book.title}
+        />
+      </div>
+
+      {/* INFO */}
+      <div className="cart-item-info">
+        <h3>{book.title}</h3>
+
+        <div className="cart-item-counter">
+          <span>Unidades:</span>
           <Counter
             count={quantity}
-            clickAdd={() => handleAdd(quantity)}
-            clickRemove={() => handleRemove(quantity)}
+            clickAdd={handleAdd}
+            clickRemove={handleRemove}
           />
         </div>
+
         <p>Precio por unidad: ${book.price}</p>
-        <p>Subtotal: ${value}</p>
+
+        <p className="cart-item-subtotal">
+          <strong>Subtotal:</strong> ${value}
+        </p>
       </div>
-      <div className="cart-item-container_remove-button">
-        <Button label="Remover" icon="close" onClick={removeBookFromCart}/>
+
+      {/* ACCIONES */}
+      <div className="cart-item-actions">
+        <Button
+          label="Remover"
+          icon="close"
+          onClick={handleRemoveBook}
+        />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import useLocalStorage from "@/hooks/useLocalStorage";
 import { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "@/styles/pages/book.scss";
 
 type Review = {
@@ -10,14 +10,21 @@ type Review = {
 };
 
 export default function Book() {
-  const { getBook } = useLocalStorage();
+  const {
+    getBook,
+    updateCart,
+    cart,
+    setCartStatus,
+  } = useLocalStorage();
+
   const { isbn } = useParams<{ isbn: string }>();
+  const navigate = useNavigate();
 
   const book = useMemo(() => {
-    return isbn ? getBook(isbn) : null;
+    return isbn ? getBook(isbn) : undefined;
   }, [isbn, getBook]);
 
-  /*VALIDACIÓN*/
+  /* VALIDACIÓN */
   if (!book) {
     return (
       <div className="container-book">
@@ -26,8 +33,9 @@ export default function Book() {
     );
   }
 
-  /*CANTIDAD Y PRECIO*/
+  /* CANTIDAD Y PRECIO */
   const [quantity, setQuantity] = useState(1);
+  const [addedMessage, setAddedMessage] = useState(false);
 
   const increase = () => setQuantity((q) => q + 1);
   const decrease = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
@@ -35,12 +43,11 @@ export default function Book() {
   const unitPrice = book.price ?? 0;
   const totalPrice = unitPrice * quantity;
 
-  /*OPINIONES*/
+  /* OPINIONES */
   const [reviews, setReviews] = useState<Review[]>([]);
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);
 
-  //Cargar opiniones guardadas
   useEffect(() => {
     if (isbn) {
       const saved = localStorage.getItem(`reviews-${isbn}`);
@@ -50,7 +57,6 @@ export default function Book() {
     }
   }, [isbn]);
 
-  //Guardar nueva opinión (SE ACUMULAN)
   const saveReview = () => {
     if (!comment || rating === 0) return;
 
@@ -61,21 +67,56 @@ export default function Book() {
     };
 
     const updatedReviews = [...reviews, newReview];
-
     setReviews(updatedReviews);
-    localStorage.setItem(
-      `reviews-${isbn}`,
-      JSON.stringify(updatedReviews)
-    );
-
+    localStorage.setItem(`reviews-${isbn}`, JSON.stringify(updatedReviews));
     setComment("");
     setRating(0);
+  };
+
+  // Agrega
+  const handleAddToCart = () => {
+    const newCart = new Map(cart);
+    const key = book.isbn;
+
+    if (newCart.has(key)) {
+      const item = newCart.get(key)!;
+      item.quantity += quantity;
+      item.value = item.quantity * unitPrice;
+      newCart.set(key, item);
+    } else {
+      newCart.set(key, {
+        book,
+        quantity,
+        value: unitPrice * quantity,
+      });
+    }
+
+    updateCart(newCart);
+
+    setAddedMessage(true);
+    setTimeout(() => setAddedMessage(false), 2000);
+  };
+
+  // Compra directa
+  const handleBuyNow = () => {
+    const newCart = new Map(cart);
+    const key = book.isbn;
+
+    newCart.set(key, {
+      book,
+      quantity,
+      value: unitPrice * quantity,
+    });
+
+    updateCart(newCart);
+    setCartStatus();        // abre modal
+    navigate("/checkout"); // va a checkout
   };
 
   return (
     <div className="container-book">
       <div className="book-main">
-        {/* IMG */}
+        {/* IMAGEN */}
         <div className="book-image">
           <img
             src={book.image || "https://via.placeholder.com/220x300"}
@@ -97,20 +138,35 @@ export default function Book() {
         {/* COMPRA */}
         <div className="book-buy">
           <p className="price">${totalPrice} USD</p>
-          <p className="unit-price">
-            Precio unitario: ${unitPrice} USD
-          </p>
+          <p className="unit-price">Precio unitario: ${unitPrice} USD</p>
 
           <div className="quantity">
-            <button onClick={decrease}>-</button>
+            <button type="button" onClick={decrease}>-</button>
             <span>{quantity}</span>
-            <button onClick={increase}>+</button>
+            <button type="button" onClick={increase}>+</button>
           </div>
 
-          <button className="btn-secondary">
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={handleAddToCart}
+          >
             Añadir {quantity} al cesto
           </button>
-          <button className="btn-primary">Comprar</button>
+
+          {addedMessage && (
+            <p className="added-success">
+              ✔ Agregado correctamente al carrito
+            </p>
+          )}
+
+          <button
+            type="button"
+            className="btn-primary"
+            onClick={handleBuyNow}
+          >
+            Comprar
+          </button>
         </div>
       </div>
 
@@ -159,7 +215,11 @@ export default function Book() {
           placeholder="Tu opinión se publicará como anónima"
         />
 
-        <button className="btn-primary" onClick={saveReview}>
+        <button
+          type="button"
+          className="btn-primary"
+          onClick={saveReview}
+        >
           Guardar
         </button>
       </div>

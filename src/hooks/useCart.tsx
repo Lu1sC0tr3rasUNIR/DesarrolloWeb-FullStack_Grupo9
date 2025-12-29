@@ -6,60 +6,80 @@ import useLocalStorage from "./useLocalStorage";
 export default function useCart(): IUseCart {
   const { cart, updateCart, totalValue } = useLocalStorage();
 
-  //Funcion para agregar un libro al carrito
+  /*AGREGAR*/
   const addBook = useCallback(
     (book: IBooks, quantity: number) => {
-      const prevCart = new Map(cart);
-      // Eliminar el libro si ya existe para actualizar la cantidad
-      prevCart.delete(book.id.toString());
-      const value = (book.price ?? 0) * quantity;
-      // Agregar el libro con la nueva cantidad
-      prevCart.set(book.id.toString(), { book, quantity, value });
-      updateCart(prevCart);
-    },
-    [cart, updateCart, totalValue]
-  );
+      const newCart = new Map(cart);
+      const key = book.isbn;
+      const existing = newCart.get(key);
 
-  //Funcion para eliminar un libro del carrito
-  const removeBook = useCallback(
-    (bookId: number) => {
-      const prevCart = new Map(cart);
-      prevCart.delete(bookId.toString());
-      updateCart(prevCart);
-    },
-    [cart, updateCart, totalValue]
-  );
-
-  //Funcion para actualizar la cantidad de un libro en el carrito
-  const updateBookQuantity = useCallback(
-    (bookId: number, quantity: number) => {
-      const prevCart = new Map(cart);
-      const item = prevCart.get(bookId.toString());
-      if (item) {
-        item.quantity = quantity;
-        item.value = (item.book.price ?? 0) * quantity;
-        prevCart.set(bookId.toString(), item);
-        updateCart(prevCart);
+      if (existing) {
+        newCart.set(key, {
+          ...existing,
+          quantity: existing.quantity + quantity,
+          value:
+            (existing.quantity + quantity) * (book.price ?? 0),
+        });
+      } else {
+        newCart.set(key, {
+          book,
+          quantity,
+          value: (book.price ?? 0) * quantity,
+        });
       }
+
+      updateCart(newCart);
     },
-    [cart, updateCart, totalValue]
+    [cart, updateCart]
   );
 
-  //Funcion para limpiar el carrito
+  /*ELIMINAR*/
+  const removeBook = useCallback(
+    (isbn: string) => {
+      const newCart = new Map(cart);
+      newCart.delete(isbn);
+      updateCart(newCart);
+    },
+    [cart, updateCart]
+  );
+
+  /*ACTUALIZAR*/
+  const updateBookQuantity = useCallback(
+    (isbn: string, quantity: number) => {
+      const newCart = new Map(cart);
+      const existing = newCart.get(isbn);
+
+      if (!existing) return;
+
+      if (quantity <= 0) {
+        newCart.delete(isbn);
+      } else {
+        newCart.set(isbn, {
+          ...existing,
+          quantity,
+          value: quantity * (existing.book.price ?? 0),
+        });
+      }
+
+      updateCart(newCart);
+    },
+    [cart, updateCart]
+  );
+
+  /*LIMPIAR CARRITO*/
   const clearCart = useCallback(() => {
     updateCart(new Map());
-  }, [updateCart, totalValue, cart]);
+  }, [updateCart]);
 
-
-  //Funcion para obtener el total de libros en el carrito
+  /*TOTAL DE LIBROS*/
   const getTotalBooks = useCallback((): number => {
     let total = 0;
     cart.forEach((item) => {
       total += item.quantity;
     });
     return total;
-  }, [cart, totalValue, updateCart]);
-  
+  }, [cart]);
+
   return {
     cartBooks: cart,
     totalValue,

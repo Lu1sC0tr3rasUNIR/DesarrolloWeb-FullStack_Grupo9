@@ -11,7 +11,7 @@ export default function StorageProvider({
 }: {
   children: React.ReactNode;
 }) {
-  // StorageProvider logic here
+  /*STATES*/
   const [books, setBooks] = useState<Map<string, IBooks>>(new Map());
   const [category, setCategory] = useState<Map<string, ICheckbox>>(new Map());
   const [cart, setCart] = useState<Map<string, ICartItem>>(new Map());
@@ -50,19 +50,23 @@ export default function StorageProvider({
     return books.get(isbn);
   };
 
-  const addBook = (book: IBooks) => {
-    setBooks((prevBooks) => new Map(prevBooks).set(book.isbn, book));
-  };
-
-  const removeBook = (isbn: string) => {
-    setBooks((prevBooks) => {
-      const newBooks = new Map(prevBooks);
-      newBooks.delete(isbn);
-      return newBooks;
+  const addBook = useCallback((book: IBooks) => {
+    setBooks((prev) => {
+      const next = new Map(prev);
+      next.set(book.isbn, book);
+      return next;
     });
-  };
+  }, []);
 
-  //Funciones del carrito
+  const removeBook = useCallback((isbn: string) => {
+    setBooks((prev) => {
+      const next = new Map(prev);
+      next.delete(isbn);
+      return next;
+    });
+  }, []);
+
+  /*CARRITO*/
   const updateCart = useCallback((newCart: Map<string, ICartItem>) => {
     setCart(newCart);
     const value = Array.from(newCart.values()).reduce(
@@ -80,8 +84,6 @@ export default function StorageProvider({
   useEffect(() => {
     const storedBooks = myBackend();
     const categoryBooks = myCategorys();
-    const booksMap: Map<string, IBooks> = new Map();
-    const categoryMap: Map<string, ICheckbox> = new Map();
 
     if (storedBooks) {
       storedBooks.forEach((book) => {
@@ -130,6 +132,8 @@ export default function StorageProvider({
   );
 
   return (
-    <StorageContext.Provider value={value}>{children}</StorageContext.Provider>
+    <StorageContext.Provider value={value}>
+      {children}
+    </StorageContext.Provider>
   );
 }

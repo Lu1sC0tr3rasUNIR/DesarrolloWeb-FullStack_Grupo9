@@ -1,42 +1,78 @@
 import useLocalStorage from "@/hooks/useLocalStorage";
-import CartItem from "./cartItem";
 import useCart from "@/hooks/useCart";
+import CartItem from "./cartItem";
 import Button from "./button";
 import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
   const { cart, activeCart, setCartStatus } = useLocalStorage();
-  const { totalValue } = useCart();
-  const booksInCart = Array.from(cart.values());
+  const { totalValue, getTotalBooks } = useCart();
   const navigate = useNavigate();
 
+  // Si el carrito no está activo, no se renderiza el modal
   if (!activeCart) return null;
 
+  const items = Array.from(cart.values());
+
   return (
-    <div className="cart-container">
-      <h1>Carrito</h1>
-      {booksInCart.length === 0 ? (
-        <p>El carrito está vacío.</p>
-      ) : (
-        <div>
-          {booksInCart.map((item) => (
-            <CartItem
-              key={item.book.id}
-              book={item.book}
-              quantity={item.quantity}
-              value={item.value}
+    <div className="cart-overlay">
+      <div className="cart-modal">
+        {/* HEADER */}
+        <header className="cart-header">
+          <h2>Resumen de pedido</h2>
+          <button
+            className="close-btn"
+            onClick={setCartStatus}
+          >
+            ✕
+          </button>
+        </header>
+
+        {/* BODY (DOS COLUMNAS) */}
+        <div className="cart-body">
+          {/* LISTA DE PRODUCTOS */}
+          <div className="cart-items">
+            {items.length === 0 ? (
+              <p>El carrito está vacío.</p>
+            ) : (
+              items.map((item) => (
+                <CartItem
+                  key={item.book.isbn}
+                  book={item.book}
+                  quantity={item.quantity}
+                  value={item.value}
+                />
+              ))
+            )}
+          </div>
+
+          {/* RESUMEN */}
+          <aside className="cart-summary">
+            <p>
+              <strong>Cantidad total:</strong>{" "}
+              {getTotalBooks()}
+            </p>
+            <p>
+              <strong>Total:</strong> ${totalValue} USD
+            </p>
+
+            <Button
+              label="Realizar pedido"
+              onClick={() => {
+                setCartStatus();       // cerrar modal
+                navigate("/checkout"); // ir a checkout
+              }}
             />
-          ))}
+          </aside>
         </div>
-      )}
-      <p>Total a pagar: ${totalValue}</p>
-      <Button
-        label="Ir al resumen de compra"
-        onClick={() => {
-          setCartStatus();
-          navigate(`/checkout`);
-        }}
-      />
+
+        {/* PASOS */}
+        <footer className="cart-steps">
+          <span className="active">Carro de compras</span>
+          <span>Información de envío</span>
+          <span>Confirmación y pago</span>
+        </footer>
+      </div>
     </div>
   );
 }
