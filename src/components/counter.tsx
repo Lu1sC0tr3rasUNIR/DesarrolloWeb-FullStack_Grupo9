@@ -20,13 +20,13 @@ export default function Counter({
     <div className="counter">
       <button className="counter-btn counter-btn-left" onClick={() => clickRemove && clickRemove(count)}>
         <span className="button-icon">
-          <Icons name="minus" />
+          <Icons name="minus" color="rgb(255, 255, 255)" />
         </span>
       </button>
       <div className="counter-display">{count}</div>
       <button className="counter-btn counter-btn-right" onClick={() => clickAdd && clickAdd(count)}>
         <span className="button-icon">
-          <Icons name="plus" />
+          <Icons name="plus" color="rgb(255, 255, 255)" />
         </span>
       </button>
     </div>

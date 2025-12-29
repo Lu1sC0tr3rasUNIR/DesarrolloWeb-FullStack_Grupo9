@@ -1,0 +1,35 @@
+@use '../variables/colors' as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  button {
+    background-color: get-color(primary, 3);
+    color: get-color(paper, 1);
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin: 0 5px;
+    }
+
+    &:disabled {
+      background-color: get-color(paper, 5);
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    margin: 0 10px;
+  }
+}
