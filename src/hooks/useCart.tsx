@@ -6,7 +6,7 @@ import useLocalStorage from "./useLocalStorage";
 export default function useCart(): IUseCart {
   const { cart, updateCart, totalValue } = useLocalStorage();
 
-  /*AGREGAR*/
+  /*AGREGAR AL CARRITO*/
   const addBook = useCallback(
     (book: IBooks, quantity: number) => {
       const newCart = new Map(cart);
@@ -14,11 +14,12 @@ export default function useCart(): IUseCart {
       const existing = newCart.get(key);
 
       if (existing) {
+        const newQuantity = existing.quantity + quantity;
+
         newCart.set(key, {
           ...existing,
-          quantity: existing.quantity + quantity,
-          value:
-            (existing.quantity + quantity) * (book.price ?? 0),
+          quantity: newQuantity,
+          value: newQuantity * (book.price ?? 0),
         });
       } else {
         newCart.set(key, {
@@ -33,7 +34,7 @@ export default function useCart(): IUseCart {
     [cart, updateCart]
   );
 
-  /*ELIMINAR*/
+  /*ELIMINAR LIBRO*/
   const removeBook = useCallback(
     (isbn: string) => {
       const newCart = new Map(cart);
@@ -43,7 +44,7 @@ export default function useCart(): IUseCart {
     [cart, updateCart]
   );
 
-  /*ACTUALIZAR*/
+  /*ACTUALIZAR CANTIDAD*/
   const updateBookQuantity = useCallback(
     (isbn: string, quantity: number) => {
       const newCart = new Map(cart);
@@ -71,7 +72,7 @@ export default function useCart(): IUseCart {
     updateCart(new Map());
   }, [updateCart]);
 
-  /*TOTAL DE LIBROS*/
+  /*TOTAL DE UNIDADES*/
   const getTotalBooks = useCallback((): number => {
     let total = 0;
     cart.forEach((item) => {
