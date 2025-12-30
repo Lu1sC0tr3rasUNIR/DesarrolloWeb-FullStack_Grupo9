@@ -1,7 +1,9 @@
 import useLocalStorage from "@/hooks/useLocalStorage";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "@/styles/pages/book.scss";
+import Button from "@/components/button";
+import Counter from "@/components/counter";
+import { ICartItem } from "@/interfaces/hooks/IUseCart";
 
 type Review = {
   comment: string;
@@ -79,7 +81,7 @@ export default function Book() {
     const key = book.isbn;
 
     if (newCart.has(key)) {
-      const item = newCart.get(key)!;
+      const item = newCart.get(key) as ICartItem;
       item.quantity += quantity;
       item.value = item.quantity * unitPrice;
       newCart.set(key, item);
@@ -140,19 +142,13 @@ export default function Book() {
           <p className="price">${totalPrice} USD</p>
           <p className="unit-price">Precio unitario: ${unitPrice} USD</p>
 
-          <div className="quantity">
-            <button type="button" onClick={decrease}>-</button>
-            <span>{quantity}</span>
-            <button type="button" onClick={increase}>+</button>
-          </div>
+          <Counter count={quantity} clickAdd={increase} clickRemove={decrease} />
 
-          <button
-            type="button"
-            className="btn-secondary"
+          <Button
+            label={`Añadir ${quantity} al cesto`}
             onClick={handleAddToCart}
-          >
-            Añadir {quantity} al cesto
-          </button>
+            variant="success"
+          />
 
           {addedMessage && (
             <p className="added-success">
@@ -160,13 +156,11 @@ export default function Book() {
             </p>
           )}
 
-          <button
-            type="button"
-            className="btn-primary"
+          <Button
+            label="Comprar"
             onClick={handleBuyNow}
-          >
-            Comprar
-          </button>
+            variant="primary"
+          />
         </div>
       </div>
 
@@ -215,13 +209,11 @@ export default function Book() {
           placeholder="Tu opinión se publicará como anónima"
         />
 
-        <button
-          type="button"
-          className="btn-primary"
+        <Button
+          label="Guardar"
           onClick={saveReview}
-        >
-          Guardar
-        </button>
+          variant="primary"
+        />
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ export default function Counter({
         disabled={count <= 1}
       >
         <span className="button-icon">
-          <Icons name="minus" color="rgb(255, 255, 255)" />
+          <Icons name="minus" />
         </span>
       </button>
 
@@ -32,7 +32,7 @@ export default function Counter({
         onClick={clickAdd}
       >
         <span className="button-icon">
-          <Icons name="plus" color="rgb(255, 255, 255)" />
+          <Icons name="plus" />
         </span>
       </button>
     </div>

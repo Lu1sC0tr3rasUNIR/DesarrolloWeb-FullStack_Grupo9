@@ -20,12 +20,11 @@ export default function Cart() {
         {/* HEADER */}
         <header className="cart-header">
           <h2>Resumen de pedido</h2>
-          <button
-            className="close-btn"
+          <Button
+            label="✕"
             onClick={setCartStatus}
-          >
-            ✕
-          </button>
+            variant="primary"
+          />
         </header>
 
         {/* BODY (DOS COLUMNAS) */}

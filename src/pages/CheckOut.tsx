@@ -1,14 +1,33 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "@/components/button";
+import Input from "@/components/input";
+import Select from "@/components/select";
+import Modal from "@/components/modal";
 import useCart from "@/hooks/useCart";
 import useLocalStorage from "@/hooks/useLocalStorage";
-import "@/styles/components/checkout.scss";
 
 export default function CheckOut() {
-  const { cart, totalValue } = useLocalStorage();
+  const { cart, totalValue, updateCart } = useLocalStorage();
   const { getTotalBooks } = useCart();
+  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
 
   const shippingCost = 5;
   const totalWithShipping = totalValue + shippingCost;
+
+  const handlePayment = () => {
+    setShowModal(true);
+  };
+
+  const handleAcceptPayment = () => {
+    // Limpiar el carrito
+    updateCart(new Map());
+    // Cerrar el modal
+    setShowModal(false);
+    // Navegar a la página principal
+    navigate("/home");
+  };
 
   return (
     <div className="checkout-container">
@@ -19,47 +38,57 @@ export default function CheckOut() {
         <div className="checkout-form">
           <h2>Dirección de envío</h2>
 
-          <label>
-            País
-            <select>
-              <option>Seleccione país</option>
-              <option>Colombia</option>
-            </select>
-          </label>
+          <Select
+            label="País"
+            options={[
+              { value: "", label: "Seleccione país" },
+              { value: "colombia", label: "Colombia" },
+            ]}
+            value=""
+            onChange={(value) => console.log(value)}
+          />
 
-          <label>
-            Estado / Departamento
-            <select>
-              <option>Seleccione estado/departamento</option>
-              <option>Huila</option>
-            </select>
-          </label>
+          <Select
+            label="Estado / Departamento"
+            options={[
+              { value: "", label: "Seleccione estado/departamento" },
+              { value: "huila", label: "Huila" },
+            ]}
+            value=""
+            onChange={(value) => console.log(value)}
+          />
 
-          <label>
-            Ciudad
-            <select>
-              <option>Seleccione ciudad</option>
-              <option>Neiva</option>
-            </select>
-          </label>
-
-          <label>
-            Dirección de residencia
-            <input type="text" placeholder="Calle, carrera, número..." />
-          </label>
+          <Select
+            label="Ciudad"
+            options={[
+              { value: "", label: "Seleccione ciudad" },
+              { value: "neiva", label: "Neiva" },
+            ]}
+            value=""
+            onChange={(value) => console.log(value)}
+          />
+          <Input
+            label=" Dirección de residencia"
+            type="text"
+            placeholder="Calle, carrera, número..."
+          />
         </div>
 
         {/* INFO */}
         <div className="checkout-info">
           <div className="info-box">
             <span className="icon">🚚</span>
-            <p><strong>Tiempo de entrega estimado</strong></p>
+            <p>
+              <strong>Tiempo de entrega estimado</strong>
+            </p>
             <p>3 días</p>
           </div>
 
           <div className="info-box">
             <span className="icon">💲</span>
-            <p><strong>Costo de envío</strong></p>
+            <p>
+              <strong>Costo de envío</strong>
+            </p>
             <p>${shippingCost} USD</p>
           </div>
         </div>
@@ -67,16 +96,20 @@ export default function CheckOut() {
 
       {/* RESUMEN */}
       <div className="checkout-summary">
-        <p><strong>Cantidad de productos:</strong> {getTotalBooks()}</p>
-        <p><strong>Total productos:</strong> ${totalValue} USD</p>
-        <p><strong>Total con envío:</strong> ${totalWithShipping} USD</p>
+        <p>
+          <strong>Cantidad de productos:</strong> {getTotalBooks()}
+        </p>
+        <p>
+          <strong>Total productos:</strong> ${totalValue} USD
+        </p>
+        <p>
+          <strong>Total con envío:</strong> ${totalWithShipping} USD
+        </p>
 
         <Button
           label="Continuar al pago"
           icon="arrow-right"
-          onClick={() => {
-            alert("Aquí iría la página de Confirmación y pago");
-          }}
+          onClick={handlePayment}
         />
       </div>
 
@@ -86,6 +119,16 @@ export default function CheckOut() {
         <span className="active">Información de envío</span>
         <span>Confirmación y pago</span>
       </div>
+
+      {/* MODAL DE CONFIRMACIÓN DE PAGO */}
+      <Modal
+        title="¡Pago exitoso!"
+        description="Tu pedido ha sido procesado correctamente. Recibirás un correo de confirmación en breve."
+        type="single"
+        isOpen={showModal}
+        onAccept={handleAcceptPayment}
+        acceptLabel="Aceptar"
+      />
     </div>
   );
 }

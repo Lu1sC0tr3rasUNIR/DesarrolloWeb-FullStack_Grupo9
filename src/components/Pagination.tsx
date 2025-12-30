@@ -1,6 +1,7 @@
 import React from 'react';
 import { IPagination } from '@/interfaces/components/IPagination.tsx';
 import Icons from './icons';
+import Button from './button';
 
 const Pagination: React.FC<IPagination> = ({ currentPage, totalPages, onPageChange }) => {
   const handlePrevious = () => {
@@ -21,17 +22,23 @@ const Pagination: React.FC<IPagination> = ({ currentPage, totalPages, onPageChan
 
   return (
     <div className="pagination">
-      <button onClick={handlePrevious} disabled={currentPage === 1}>
-        <Icons name="arrow-left" color={iconColor()} />
-        Anterior
-      </button>
+      <Button 
+        label="Anterior" 
+        icon="arrow-left" 
+        onClick={handlePrevious} 
+        disabled={currentPage === 1}
+        variant="primary"
+      />
       <span>
         Página {currentPage} de {totalPages}
       </span>
-      <button onClick={handleNext} disabled={currentPage === totalPages}>
-        Siguiente
-        <Icons name="arrow-right" color={iconColor()} />
-      </button>
+      <Button 
+        label="Siguiente" 
+        icon="arrow-right" 
+        onClick={handleNext} 
+        disabled={currentPage === totalPages}
+        variant="primary"
+      />
     </div>
   );
 };

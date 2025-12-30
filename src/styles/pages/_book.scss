@@ -47,8 +47,13 @@
 
 /*BLOQUE DE COMPRA*/
 .book-buy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #e0e0e0;
   border-radius: 10px;
+  gap: 10px;
   padding: 1.2rem;
   text-align: center;
   background-color: #fafafa;
@@ -57,7 +62,11 @@
 .book-buy .price {
   font-size: 1.7rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin: 0px;
+}
+
+.book-buy .unit-price {
+  margin: 0px;
 }
 
 /*Cantidad*/

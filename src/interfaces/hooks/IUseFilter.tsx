@@ -1,4 +1,4 @@
-import { IValueFilter } from "../context/IStorageContext";
+import { IValueFilter } from "../components/context/IStorageContext";
 
 export interface IUseFilter {
     categoryFilter: Map<string, string>;

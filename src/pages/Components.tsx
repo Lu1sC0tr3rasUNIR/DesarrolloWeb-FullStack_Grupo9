@@ -1,11 +1,13 @@
 import Button from "@/components/button";
-import Card from "@/components/card";
-import Counter from "@/components/counter";
 import Icons from "@/components/icons";
 import Input from "@/components/input";
 import Select from "@/components/select";
+import Modal from "@/components/modal";
+import { useState } from "react";
 
 export default function Components() {
+  const [modalSingleOpen, setModalSingleOpen] = useState(false);
+  const [modalDoubleOpen, setModalDoubleOpen] = useState(false);
   return (
     <div className="components-container">
       <h1>Componentes de la app</h1>
@@ -18,9 +20,7 @@ export default function Components() {
         </div>
       </div>
       <div className="component-section">
-        <div className="component-group">
-          <Counter count={0} />
-        </div>
+        
       </div>
       <div className="component-section">
         <div className="component-group">
@@ -30,6 +30,7 @@ export default function Components() {
       <div className="component-section">
         <div className="component-group">
           <Select
+            label="hola"
             options={[
               { label: "1", value: "1" },
               { label: "2", value: "1" },
@@ -48,6 +49,52 @@ export default function Components() {
           <Icons name="cart" />
         </div>
       </div>
+      <div className="component-section">
+        <h2>Modales</h2>
+        <div className="component-group">
+          <Button 
+            label="Abrir Modal - Solo Aceptar" 
+            variant="primary" 
+            onClick={() => setModalSingleOpen(true)}
+          />
+          <Button 
+            label="Abrir Modal - Aceptar y Rechazar" 
+            variant="alert" 
+            onClick={() => setModalDoubleOpen(true)}
+          />
+        </div>
+      </div>
+
+      {/* Modal con un solo botón */}
+      <Modal
+        title="Notificación"
+        description="Esta es una notificación simple que solo requiere confirmación."
+        type="single"
+        isOpen={modalSingleOpen}
+        onAccept={() => {
+          console.log('Modal aceptado');
+          setModalSingleOpen(false);
+        }}
+        acceptLabel="Entendido"
+      />
+
+      {/* Modal con dos botones */}
+      <Modal
+        title="Confirmar acción"
+        description="¿Estás seguro de que deseas realizar esta acción? Esta operación no se puede deshacer."
+        type="double"
+        isOpen={modalDoubleOpen}
+        onAccept={() => {
+          console.log('Acción confirmada');
+          setModalDoubleOpen(false);
+        }}
+        onReject={() => {
+          console.log('Acción cancelada');
+          setModalDoubleOpen(false);
+        }}
+        acceptLabel="Confirmar"
+        rejectLabel="Cancelar"
+      />
     </div>
   );
 }

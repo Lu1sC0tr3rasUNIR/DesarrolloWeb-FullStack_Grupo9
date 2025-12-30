@@ -75,7 +75,7 @@ export default function Icons({ name, color }: IICons) {
         >
           <path
             d="M12 8V16M16 12H8"
-            style={{ stroke: color || "white" }}
+            stroke={color || "currentColor"}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
