@@ -4,16 +4,16 @@
 .card {
   width: 100%;
   max-width: 300px;
-  height: 450px;            /* altura total de la tarjeta */
+  height: 450px;            
   border: 1px solid colors.get-color("paper", 3);
   border-radius: 14px;
   background-color: colors.get-color("paper", 1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  overflow: hidden;          /* recorta desbordes externos */
+  overflow: hidden;         
   transition: transform 0.18s ease, box-shadow 0.18s ease;
   display: flex;
   flex-direction: column;
-  min-height: 0;             /* ⬅️ permite que los hijos flex se encojan */
+  min-height: 0;             
 
   &:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

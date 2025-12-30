@@ -134,7 +134,12 @@ export default function StorageProvider({
       totalValue,
       addBook,
       removeBook,
+      getBook,
+      addFilter,
+      updateCatergoryFilter,
+      updateValueFilter,
       updateCart,
+      setCartStatus,
     ]
   );
 
