@@ -34,12 +34,12 @@ export default function Home() {
   };
 
   return (
-    <div className="container-home">
-      <div className="container-home_category">
+    <div className="container--home">
+      <div className="container__sidebar">
         <Category />
       </div>
-      <div className="container-home_books">
-        <div className="container-home_books_view">
+      <div className="container__main">
+        <div className="container__grid">
           {paginatedBooks.length > 0 ? (
             paginatedBooks.map((b, idx) => (
               <Card

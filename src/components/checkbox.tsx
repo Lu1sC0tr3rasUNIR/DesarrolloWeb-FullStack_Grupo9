@@ -8,16 +8,16 @@ export default function Checkbox({
   disabled = false,
 }: ICheckbox) {
   return (
-    <div className="checkbox-container">
+    <div className={`checkbox ${disabled ? 'checkbox--disabled' : ''}`}>
       <input
         type="checkbox"
         checked={checked}
         onClick={onClick}
         onChange={onChange ? (e) => onChange(e.target.checked) : undefined}
         disabled={disabled}
-        className="checkbox-input"
+        className="checkbox__input"
       />
-      <span className="checkbox-custom">{label}</span>
+      <span className="checkbox__label">{label}</span>
     </div>
   );
 }

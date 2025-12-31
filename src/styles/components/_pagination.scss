@@ -5,17 +5,20 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  gap: 8px;
 
-  button {
+  // Elements
+  &__button {
     background-color: get-color(primary, 3);
     color: get-color(paper, 1);
     border: none;
     padding: 10px 15px;
-    margin: 0 5px;
     cursor: pointer;
     border-radius: 5px;
     display: flex;
     align-items: center;
+    font-weight: 500;
+    transition: all 0.2s ease;
 
     svg {
       width: 20px;
@@ -23,13 +26,22 @@
       margin: 0 5px;
     }
 
+    &:hover:not(:disabled) {
+      background-color: get-color(primary, 4);
+      transform: scale(1.05);
+    }
+
     &:disabled {
       background-color: get-color(paper, 5);
       cursor: not-allowed;
+      opacity: 0.6;
     }
   }
 
-  span {
+  &__info {
     margin: 0 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: get-color(paper, 7);
   }
 }

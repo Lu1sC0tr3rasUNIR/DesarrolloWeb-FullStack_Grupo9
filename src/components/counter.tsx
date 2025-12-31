@@ -15,25 +15,21 @@ export default function Counter({
     <div className="counter">
       <button
         type="button"
-        className="counter-btn counter-btn-left"
+        className="counter__button"
         onClick={clickRemove}
         disabled={count <= 1}
       >
-        <span className="button-icon">
-          <Icons name="minus" />
-        </span>
+        <Icons name="minus" />
       </button>
 
-      <div className="counter-display">{count}</div>
+      <div className="counter__display">{count}</div>
 
       <button
         type="button"
-        className="counter-btn counter-btn-right"
+        className="counter__button"
         onClick={clickAdd}
       >
-        <span className="button-icon">
-          <Icons name="plus" />
-        </span>
+        <Icons name="plus" />
       </button>
     </div>
   );

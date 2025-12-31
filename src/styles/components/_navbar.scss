@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../variables/_colors.scss" as colors;
 
-.navbar-component {
+.navbar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -11,7 +11,8 @@
   gap: 12px;
   padding: 0 16px;
 
-  a {
+  // Elements
+  &__link {
     padding: 6px 12px;
     border-radius: 999px;
     font-weight: 500;

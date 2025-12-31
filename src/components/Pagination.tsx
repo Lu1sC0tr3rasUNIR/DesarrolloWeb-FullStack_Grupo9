@@ -29,7 +29,7 @@ const Pagination: React.FC<IPagination> = ({ currentPage, totalPages, onPageChan
         disabled={currentPage === 1}
         variant="primary"
       />
-      <span>
+      <span className="pagination__info">
         Página {currentPage} de {totalPages}
       </span>
       <Button 

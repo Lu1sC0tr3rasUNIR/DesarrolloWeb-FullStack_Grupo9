@@ -1,40 +1,40 @@
 @use "../variables/_colors.scss" as colors;
 
 .container {
-  &-home {
+  &--home {
     display: flex;
     flex-direction: row;
     height: calc(100dvh - 100px);
     background: colors.get-color("paper", 2);
+  }
 
-    &_category {
-      display: flex;
-      width: 280px;
-      box-sizing: border-box;
-      background: colors.get-color("paper", 1);
-    }
+  &__sidebar {
+    display: flex;
+    width: 280px;
+    box-sizing: border-box;
+    background: colors.get-color("paper", 1);
+  }
 
-    &_books {
-      display: flex;
-      flex-direction: column;
-      width: calc(100% - 280px);
-      height: 100%;
-      overflow-y: auto;
-      box-sizing: border-box;
-      padding: 24px 32px;
-      gap: 24px;
+  &__main {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 280px);
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 24px 32px;
+    gap: 24px;
+  }
 
-      &_promotion {
-        display: none; 
-      }
+  &__promotion {
+    display: none;
+  }
 
-      &_view {
-        flex: 1;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 32px; 
-        align-content: flex-start;
-      }
-    }
+  &__grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 32px;
+    align-content: flex-start;
   }
 }

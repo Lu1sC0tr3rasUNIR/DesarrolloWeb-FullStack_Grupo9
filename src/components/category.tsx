@@ -14,11 +14,11 @@ export default function Category() {
     updateValueFilter,
   } = useFilter();
   return (
-    <div className="category-container">
-      <div className="category-container_inner">
+    <div className="category__container">
+      <div className="category__header">
         <p>Categorías destacadas</p>
       </div>
-      <div className="category-container_list">
+      <div className="category__list">
         {Array.from(category.values()).map((cat, idx) => (
           <Checkbox
             key={idx}
@@ -34,7 +34,7 @@ export default function Category() {
           />
         ))}
       </div>
-      <div className="category-container_price">
+      <div className="category__filter">
         <Input
           placeholder="Precio mínimo"
           type="number"
@@ -59,7 +59,7 @@ export default function Category() {
         />
       </div>
 
-      <div className="category-container_subscription">
+      <div className="category__subscription">
         <p>
           ¡Mantente en contacto! Únete a nuestro boletín y no te pierdas ningún
           lanzamiento.

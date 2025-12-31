@@ -18,26 +18,26 @@ export default function Header({ children, className = "" }: HeaderProps) {
   }
 
   return (
-    <header className={`header-component ${className}`}>
-      <div className="header-component-top">
-        <div className="header-component-top_logo">
+    <header className={`header ${className}`}>
+      <div className="header__top">
+        <div className="header__logo">
           <p>Relatos de Papel</p>
         </div>
-        <div className="header-component-top_search_bar">
+        <div className="header__search">
           <Input 
-          //label="Text" 
-          icon="lupa" 
-          type="text" placeholder="Buscar..." 
-          value={filter}
-          onChange={(e) => addFilter(e.target.value)}
+            icon="lupa" 
+            type="text" 
+            placeholder="Buscar..." 
+            value={filter}
+            onChange={(e) => addFilter(e.target.value)}
           />
         </div>
-        <div className="header-component-top_user">
+        <div className="header__user">
           <Icons name="user" />
           <p>Usuario</p>
         </div>
       </div>
-      <div className="header-component-bottom">{children}</div>
+      <div className="header__bottom">{children}</div>
     </header>
   );
 }

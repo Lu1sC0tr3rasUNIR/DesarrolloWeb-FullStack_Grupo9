@@ -5,49 +5,56 @@
   padding: 25px 0;
   border-bottom: 1px solid #e0e0e0;
   align-items: center;
-}
 
-/* IMAGEN */
-.cart-item-image img {
-  width: 120px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-/* INFO DEL LIBRO */
-.cart-item-info h3 {
-  margin: 0 0 10px 0;
-}
-
-.cart-item-counter {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px 0;
-}
-
-/* SUBTOTAL */
-.cart-item-subtotal {
-  margin-top: 10px;
-  font-weight: 600;
-}
-
-/* BOTÓN REMOVER */
-.cart-item-actions {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-/* RESPONSIVE ITEM */
-@media (max-width: 768px) {
-  .cart-item {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  // Elements
+  &__image {
+    img {
+      width: 120px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 4px;
+    }
   }
 
-  .cart-item-actions {
-    justify-content: flex-start;
+  &__info {
+    h3 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+  }
+
+  &__counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  &__subtotal {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    &__actions {
+      justify-content: flex-start;
+    }
   }
 }

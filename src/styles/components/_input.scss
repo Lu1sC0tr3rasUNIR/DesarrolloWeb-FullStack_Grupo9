@@ -1,72 +1,95 @@
 @use "sass:map";
 @use "../variables/_colors.scss" as colors;
 
-.input-wrapper {
+.input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   width: 100%;
-}
 
-.with-label-wrapper {
-  min-height: 60px;
-}
-
-.without-label-wrapper {
-  height: 30px;
-}
-
-.input-label {
-  font-size: 13px;
-  font-weight: 500;
-  color: colors.get-color("paper", 7);
-  line-height: 1.2;
-}
-
-.input-icon {
-  position: absolute;
-  height: 20px;
-  width: 24px;
-  display: flex;
-  left: 5px;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  color: colors.get-color("paper", 5);
-}
-
-.input-base {
-  height: 40px;
-  box-sizing: border-box;
-  padding: 0 14px 0 12px;
-  border-radius: 999px;
-  border: 1px solid #778DA9;
-  background: rgba(224, 225, 221, 0.95);
-  font-size: 14px;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease,
-    background-color 0.18s ease;
-
-  &:hover {
-    background: #ffffff;
+  // Elements
+  &__label {
+    font-size: 13px;
+    font-weight: 500;
+    color: colors.get-color("paper", 7);
+    line-height: 1.2;
+    margin-bottom: 4px;
   }
 
-  &:focus {
-    border-color: #415A77;
-    box-shadow: 0 0 0 2px rgba(65, 90, 119, 0.25);
-    outline: none;
-    background: #ffffff;
+  &__icon {
+    position: absolute;
+    height: 20px;
+    width: 24px;
+    display: flex;
+    left: 5px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    color: colors.get-color("paper", 5);
   }
-}
 
-.with-icon {
-  padding-left: 27px;
-}
+  &__field {
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 14px 0 12px;
+    border-radius: 999px;
+    border: 1px solid #778DA9;
+    background: rgba(224, 225, 221, 0.95);
+    font-size: 14px;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
 
-.without-label{
-  top: 5px;
-}
+    &:hover {
+      background: #ffffff;
+    }
 
-.with-label{
-  bottom: 5px;
+    &:focus {
+      border-color: #415A77;
+      box-shadow: 0 0 0 2px rgba(65, 90, 119, 0.25);
+      outline: none;
+      background: #ffffff;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  // Modifiers
+  &--with-icon {
+    .input__field {
+      padding-left: 27px;
+    }
+  }
+
+  &--with-label {
+    min-height: 60px;
+
+    .input__icon {
+      bottom: 5px;
+    }
+  }
+
+  &--without-label {
+    height: 30px;
+
+    .input__icon {
+      top: 5px;
+    }
+  }
+
+  &--error {
+    .input__field {
+      border-color: #dc3545;
+      box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+    }
+  }
+
+  &--focused {
+    .input__field {
+      border-color: #415A77;
+      box-shadow: 0 0 0 2px rgba(65, 90, 119, 0.25);
+    }
+  }
 }

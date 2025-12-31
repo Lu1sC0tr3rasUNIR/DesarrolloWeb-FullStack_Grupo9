@@ -11,18 +11,17 @@ export default function Button({
   iconColor,
 }: IButton) {
   return (
-
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`button-base ${variant} ${className}`}
+      className={`button button--${variant} ${disabled ? 'button--disabled' : ''} ${className}`}
     >
       {icon && (
-        <span className="button-icon">
+        <span className="button__icon">
           <Icons name={icon} color={iconColor} />
         </span>
       )}
-      <span className="button-label">{label}</span>
+      <span className="button__label">{label}</span>
     </button>
   );
 }

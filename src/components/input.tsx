@@ -17,26 +17,24 @@ export default function Input({
   return (
     <div
       className={
-        "input-wrapper" +
-        (label ? " with-label-wrapper" : " without-label-wrapper")
+        "input" +
+        (label ? " input--with-label" : " input--without-label") +
+        (icon ? " input--with-icon" : "")
       }
     >
       {label ? (
-        <label className="input-label" htmlFor={inputId}>
+        <label className="input__label" htmlFor={inputId}>
           {label}
         </label>
       ) : null}
       {icon ? (
-        <div
-          className={"input-icon" + (label ? " with-label" : " without-label")}
-        >
+        <div className="input__icon">
           {icon && <Icons name={icon} />}
         </div>
       ) : null}
       <input
         id={inputId}
-        className={"input-base" + (icon ? " with-icon" : "")}
-        style={icon ? {} : {}}
+        className="input__field"
         placeholder={placeholder}
         type={type}
         value={value}

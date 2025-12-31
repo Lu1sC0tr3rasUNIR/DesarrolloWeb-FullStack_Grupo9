@@ -25,20 +25,20 @@ export default function Modal({
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-container">
+    <div className="modal__overlay">
+      <div className="modal__content">
         {/* HEADER */}
-        <header className="modal-header">
+        <header className="modal__header">
           <h2>{title}</h2>
         </header>
 
         {/* BODY */}
-        <div className="modal-body">
-          <p className="modal-description">{description}</p>
+        <div className="modal__body">
+          <p className="modal__description">{description}</p>
         </div>
 
         {/* FOOTER CON BOTONES */}
-        <footer className="modal-footer">
+        <footer className="modal__footer">
           {type === 'double' && (
             <Button
               label={rejectLabel}

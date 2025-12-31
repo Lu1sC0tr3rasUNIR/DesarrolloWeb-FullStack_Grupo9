@@ -9,26 +9,26 @@ export default function Components() {
   const [modalSingleOpen, setModalSingleOpen] = useState(false);
   const [modalDoubleOpen, setModalDoubleOpen] = useState(false);
   return (
-    <div className="components-container">
-      <h1>Componentes de la app</h1>
-      <div className="component-section">
-        <div className="component-group">
+    <div className="components__container">
+      <h1 className="components__title">Componentes de la app</h1>
+      <div className="component__section">
+        <div className="component__group">
           <Button label="Aceptar" variant="primary" icon="check" />
           <Button label="Cancelar" variant="danger" icon="close"></Button>
           <Button label="Guardar" variant="success" icon="check" />
           <Button label="Alerta" variant="alert" icon="info"></Button>
         </div>
       </div>
-      <div className="component-section">
+      <div className="component__section">
         
       </div>
-      <div className="component-section">
-        <div className="component-group">
+      <div className="component__section">
+        <div className="component__group">
           <Input />
         </div>
       </div>
-      <div className="component-section">
-        <div className="component-group">
+      <div className="component__section">
+        <div className="component__group">
           <Select
             label="hola"
             options={[
@@ -39,8 +39,8 @@ export default function Components() {
           />
         </div>
       </div>
-      <div className="component-section">
-        <div className="component-group">
+      <div className="component__section">
+        <div className="component__group">
           <Icons name="check" />
           <Icons name="info" />
           <Icons name="close" />
@@ -49,9 +49,9 @@ export default function Components() {
           <Icons name="cart" />
         </div>
       </div>
-      <div className="component-section">
-        <h2>Modales</h2>
-        <div className="component-group">
+      <div className="component__section">
+        <h2 className="component__heading">Modales</h2>
+        <div className="component__group">
           <Button 
             label="Abrir Modal - Solo Aceptar" 
             variant="primary" 

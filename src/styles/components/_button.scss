@@ -1,7 +1,7 @@
 @use "sass:map";
 @use '../variables/_colors.scss' as colors;
 
-.button-base {
+.button {
   padding: 9px 16px;
   border-radius: 4px;
   font-size: 14px;
@@ -22,42 +22,49 @@
   &:active:not(:disabled) {
     box-shadow: 0 1px 3px rgba(15, 23, 42, 0.18);
   }
-}
 
-.base {
-  background-color: colors.get-color('paper', 1);
-  color: colors.get-color('paper', 7);
-}
+  // Elements
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+  }
 
-.primary {
-  background-color: #415A77; // botón principal de la paleta
-  color: #E0E1DD;
-}
+  &__label {
+    display: inline-flex;
+    align-items: center;
+  }
 
-.danger {
-  background-color: colors.get-color('danger', 100);
-  color: colors.get-color('paper', 1);
-}
+  // Modifiers
+  &--base {
+    background-color: colors.get-color('paper', 1);
+    color: colors.get-color('paper', 7);
+  }
 
-.success {
-  background-color: colors.get-color('success', 100);
-  color: colors.get-color('paper', 1);
-}
+  &--primary {
+    background-color: #415A77;
+    color: #E0E1DD;
+  }
 
-.alert {
-  background-color: colors.get-color('warning', 100);
-  color: colors.get-color('paper', 7);
-}
+  &--danger {
+    background-color: colors.get-color('danger', 100);
+    color: colors.get-color('paper', 1);
+  }
 
-.button-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-}
+  &--success {
+    background-color: colors.get-color('success', 100);
+    color: colors.get-color('paper', 1);
+  }
 
-.button-label {
-  display: inline-flex;
-  align-items: center;
+  &--alert {
+    background-color: colors.get-color('warning', 100);
+    color: colors.get-color('paper', 7);
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }

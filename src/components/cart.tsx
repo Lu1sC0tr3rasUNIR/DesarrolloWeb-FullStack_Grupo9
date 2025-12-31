@@ -15,10 +15,10 @@ export default function Cart() {
   const items = Array.from(cart.values());
 
   return (
-    <div className="cart-overlay">
-      <div className="cart-modal">
+    <div className="cart__overlay">
+      <div className="cart__modal">
         {/* HEADER */}
-        <header className="cart-header">
+        <header className="cart__header">
           <h2>Resumen de pedido</h2>
           <Button
             label="✕"
@@ -28,9 +28,9 @@ export default function Cart() {
         </header>
 
         {/* BODY (DOS COLUMNAS) */}
-        <div className="cart-body">
+        <div className="cart__body">
           {/* LISTA DE PRODUCTOS */}
-          <div className="cart-items">
+          <div className="cart__items">
             {items.length === 0 ? (
               <p>El carrito está vacío.</p>
             ) : (
@@ -46,7 +46,7 @@ export default function Cart() {
           </div>
 
           {/* RESUMEN */}
-          <aside className="cart-summary">
+          <aside className="cart__summary">
             <p>
               <strong>Cantidad total:</strong>{" "}
               {getTotalBooks()}
@@ -66,10 +66,10 @@ export default function Cart() {
         </div>
 
         {/* PASOS */}
-        <footer className="cart-steps">
-          <span className="active">Carro de compras</span>
-          <span>Información de envío</span>
-          <span>Confirmación y pago</span>
+        <footer className="cart__footer">
+          <span className="cart__step active">Carro de compras</span>
+          <span className="cart__step">Información de envío</span>
+          <span className="cart__step">Confirmación y pago</span>
         </footer>
       </div>
     </div>

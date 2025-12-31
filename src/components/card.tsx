@@ -14,27 +14,24 @@ export default function Card({ book, onClick }: ICard) {
 
   return (
     <div className="card" onClick={onClick}>
-      {/* Imagen de portada */}
-      <div className="card_image">
-
-          <img
-            src={book.image}
-            alt={`${book.title} - portada`}
-            loading="lazy"
-          />
-
+      <div className="card__image">
+        <img
+          src={book.image}
+          alt={`${book.title} - portada`}
+          loading="lazy"
+        />
       </div>
 
-      <div className="card_header">
+      <div className="card__header">
         <h2>{book.title}</h2>
-        <div className="isbn">ISBN: {book.isbn}</div>
+        <div className="card__isbn">ISBN: {book.isbn}</div>
       </div>
 
-      <div className="card_body">
+      <div className="card__body">
         <p>{book.description}</p>
       </div>
 
-      <div className="card_footer">
+      <div className="card__footer">
         <p>Price: ${book.price}</p>
         <Button
           label="Agregar"

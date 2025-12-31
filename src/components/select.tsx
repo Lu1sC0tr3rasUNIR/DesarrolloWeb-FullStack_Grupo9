@@ -18,25 +18,25 @@ export default function Select({
   return (
     <div
       className={
-        "select-wrapper" +
-        (label ? " with-label-wrapper" : " without-label-wrapper")
+        "select" +
+        (label ? " select--with-label" : " select--without-label") +
+        (icon ? " select--with-icon" : "") +
+        (className ? ` ${className}` : "")
       }
     >
       {label ? (
-        <label className="select-label" htmlFor={selectId}>
+        <label className="select__label" htmlFor={selectId}>
           {label}
         </label>
       ) : null}
       {icon ? (
-        <div
-          className={"select-icon" + (label ? " with-label" : " without-label")}
-        >
+        <div className="select__icon">
           {icon && <Icons name={icon} />}
         </div>
       ) : null}
       <select
         id={selectId}
-        className={`select-base ${icon ? "with-icon" : ""} ${className}`}
+        className="select__field"
         value={value}
         onChange={(e) => onChange?.(e.target.value)}
         disabled={disabled}
