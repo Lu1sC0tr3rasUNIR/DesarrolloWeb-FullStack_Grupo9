@@ -1,20 +1,24 @@
+import { IStorageContext } from "@/interfaces/components/context/IStorageContext";
 import { ICheckbox } from "@/interfaces/components/ICheckbox";
-import { IStorageContext } from "@/interfaces/context/IStorageContext";
 import { ICartItem } from "@/interfaces/hooks/IUseCart";
 import { IBooks } from "@/interfaces/lib/myBackendInterface";
 import { createContext } from "react";
 
 export const StorageContext = createContext<IStorageContext>({
-  getBook: () => {},
+  cart: new Map<string, ICartItem>(),
+  activeCart: false,
   addBook: () => {},
-  removeBook: () => {},
+  filter: "",
+  addFilter: () => {},
   books: new Map<string, IBooks>(),
   category: new Map<string, ICheckbox>(),
-  cart: new Map<string, ICartItem>(),
-  updateCart: () => {},
-  activeCart: false,
+  categoryFilter: new Map<string, string>(),
+  updateCatergoryFilter: () => {},
+  getBook: () => undefined,
+  removeBook: () => {},
   setCartStatus: () => {},
-  addFilter: () => {},
-  filter: "",
   totalValue: 0,
+  updateCart: () => {},
+  valueFilter: { min: 0, max: 1000 },
+  updateValueFilter: () => {},
 });

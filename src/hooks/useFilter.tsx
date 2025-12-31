@@ -1,7 +1,7 @@
 import { IUseFilter } from "@/interfaces/hooks/IUseFilter";
 import useLocalStorage from "./useLocalStorage";
 import { useCallback, useState } from "react";
-import { IValueFilter } from "@/interfaces/context/IStorageContext";
+import { IValueFilter } from "@/interfaces/components/context/IStorageContext";
 
 export default function useFilter(): IUseFilter {
   const {

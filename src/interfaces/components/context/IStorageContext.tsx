@@ -1,6 +1,6 @@
-import { ICheckbox } from "../components/ICheckbox";
-import { ICartItem } from "../hooks/IUseCart";
-import { IBooks } from "../lib/myBackendInterface";
+import { ICartItem } from "@/interfaces/hooks/IUseCart";
+import { IBooks } from "@/interfaces/lib/myBackendInterface";
+import { ICheckbox } from "../ICheckbox";
 
 export interface IStorageContext {
   activeCart: boolean;

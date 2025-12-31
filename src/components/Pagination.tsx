@@ -1,7 +1,6 @@
 import React from 'react';
 import { IPagination } from '@/interfaces/components/IPagination.tsx';
-import Icons from './icons';
-import Button from './button';
+import Button from '@/components/button';
 
 const Pagination: React.FC<IPagination> = ({ currentPage, totalPages, onPageChange }) => {
   const handlePrevious = () => {

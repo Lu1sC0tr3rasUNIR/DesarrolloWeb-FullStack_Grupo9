@@ -1,13 +1,10 @@
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { StorageContext } from "@/context/StorageContext";
+import { IStorageContext, IValueFilter } from "@/interfaces/components/context/IStorageContext";
 import { ICheckbox } from "@/interfaces/components/ICheckbox";
-import {
-  IStorageContext,
-  IValueFilter,
-} from "@/interfaces/context/IStorageContext";
 import { ICartItem } from "@/interfaces/hooks/IUseCart";
 import { IBooks } from "@/interfaces/lib/myBackendInterface";
 import { myBackend, myCategorys } from "@/lib/myBackend";
-import { useCallback, useEffect, useMemo, useState } from "react";
 
 export default function StorageProvider({
   children,
