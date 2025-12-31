@@ -1,7 +1,7 @@
 @use "../variables/_colors.scss" as colors;
 
 
-.login-page {
+.login {
   width: 100%;
   min-height: 100dvh;
   display: flex;
@@ -11,7 +11,7 @@
   background: linear-gradient(135deg, #0D1B2A, #1B263B);
 }
 
-.login-shell {
+.login__shell {
   width: 100%;
   max-width: 960px;
   min-height: 480px;
@@ -23,7 +23,7 @@
   box-shadow: 0 24px 60px rgba(13, 27, 42, 0.55);
 }
 
-.login-form {
+.login__form {
   padding: 32px 32px 28px;
   background: #FFFFFF;
   border-right: 1px solid rgba(226, 232, 240, 0.9);
@@ -32,7 +32,7 @@
   gap: 20px;
 }
 
-.login-logo {
+.login__logo {
   text-align: center;
   color: #1B263B;
 
@@ -42,7 +42,7 @@
     margin-bottom: 4px;
   }
 
-  .small-text {
+  .login__small-text {
     margin: 0;
     margin-top: 2px;
     font-size: 13px;
@@ -50,24 +50,24 @@
   }
 }
 
-.login-inputs {
+.login__inputs {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.login-form .input-label {
+.login__form .input__label {
   margin-bottom: 6px;
 }
 
-.login-inputs_titulo {
+.login__inputs-title {
   font-size: 16px;
   font-weight: 500;
   text-align: left;
   color: #1B263B;
 }
 
-.login-inputs_forgot-password {
+.login__forgot-password {
   margin-top: 4px;
   display: flex;
   justify-content: space-between;
@@ -85,25 +85,19 @@
   }
 }
 
-.login-buttons {
+.login__buttons {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-top: 18px;
 }
 
-.login-buttons .button-base {
+.login__buttons .button {
   width: 100%;
 }
 
-.login-buttons .button-base:nth-child(2) {
-  background-color: transparent;
-  color: #415A77;
-  box-shadow: none;
-  border: 1px solid rgba(65, 90, 119, 0.35);
-}
 
-.login-aside {
+.login__aside {
   position: relative;
   overflow: hidden;
   background: radial-gradient(circle at top left, rgba(65, 90, 119, 0.7), rgba(13, 27, 42, 0.95));
@@ -114,7 +108,7 @@
   padding: 32px;
 }
 
-.login-aside-image {
+.login__aside-image {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -122,13 +116,13 @@
   object-fit: cover;
 }
 
-.login-aside-overlay {
+.login__aside-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(6, 11, 18, 0.35), rgba(6, 11, 18, 0.75));
 }
 
-.login-aside-content {
+.login__aside-content {
   position: relative;
   max-width: 320px;
   z-index: 1;
@@ -137,14 +131,14 @@
   background: rgba(6, 11, 18, 0.65);
 }
 
-.login-aside-quote {
+.login__aside-quote {
   font-size: 16px;
   line-height: 1.6;
   margin: 0 0 10px 0;
   color: #FFFFFF;
 }
 
-.login-aside-author {
+.login__aside-author {
   font-size: 13px;
   font-weight: 500;
   color: #E0E1DD;
@@ -153,18 +147,18 @@
 }
 
 @media (max-width: 768px) {
-  .login-shell {
+  .login__shell {
     max-width: 100%;
     grid-template-columns: minmax(0, 1fr);
     border-radius: 0;
   }
 
-  .login-form {
+  .login__form {
     padding: 24px 18px 20px;
     border-right: none;
   }
 
-  .login-aside {
+  .login__aside {
     display: none;
   }
 }

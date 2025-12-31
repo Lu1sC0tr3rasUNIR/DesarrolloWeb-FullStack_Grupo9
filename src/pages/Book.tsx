@@ -29,7 +29,7 @@ export default function Book() {
   /* VALIDACIÓN */
   if (!book) {
     return (
-      <div className="container-book">
+      <div className="book__container">
         <p>Libro no encontrado.</p>
       </div>
     );
@@ -116,10 +116,11 @@ export default function Book() {
   };
 
   return (
-    <div className="container-book">
-      <div className="book-main">
+    <div className="book">
+      <div className="book__container">
+        <div className="book__main">
         {/* IMAGEN */}
-        <div className="book-image">
+        <div className="book__image">
           <img
             src={book.image || "https://via.placeholder.com/220x300"}
             alt={book.title}
@@ -127,9 +128,9 @@ export default function Book() {
         </div>
 
         {/* INFO */}
-        <div className="book-info">
+        <div className="book__info">
           <h1>{book.title}</h1>
-          <p className="description">{book.description}</p>
+          <p className="book__description">{book.description}</p>
 
           <p><strong>Autor:</strong> {book.author}</p>
           <p><strong>Categoría:</strong> {book.category}</p>
@@ -138,9 +139,9 @@ export default function Book() {
         </div>
 
         {/* COMPRA */}
-        <div className="book-buy">
-          <p className="price">${totalPrice} USD</p>
-          <p className="unit-price">Precio unitario: ${unitPrice} USD</p>
+        <div className="book__buy">
+          <p className="book__price">${totalPrice} USD</p>
+          <p className="book__unit-price">Precio unitario: ${unitPrice} USD</p>
 
           <Counter count={quantity} clickAdd={increase} clickRemove={decrease} />
 
@@ -151,7 +152,7 @@ export default function Book() {
           />
 
           {addedMessage && (
-            <p className="added-success">
+            <p className="book__added-success">
               ✔ Agregado correctamente al carrito
             </p>
           )}
@@ -164,8 +165,8 @@ export default function Book() {
         </div>
       </div>
 
-      {/* OPINIONES */}
-      <div className="book-reviews">
+        {/* OPINIONES */}
+        <div className="book__reviews">
         <h2>Opiniones</h2>
 
         {reviews.length === 0 && (
@@ -173,10 +174,10 @@ export default function Book() {
         )}
 
         {reviews.map((review, index) => (
-          <div className="review" key={index}>
+          <div className="book__review" key={index}>
             <p><strong>Usuario anónimo</strong></p>
 
-            <div className="stars">
+            <div className="book__stars">
               {"★".repeat(review.rating)}
               {"☆".repeat(5 - review.rating)}
             </div>
@@ -187,7 +188,7 @@ export default function Book() {
 
         <h3>Escribe tu opinión</h3>
 
-        <div className="rating-input">
+        <div className="book__rating-input">
           {[1, 2, 3, 4, 5].map((star) => (
             <span
               key={star}
@@ -214,6 +215,7 @@ export default function Book() {
           onClick={saveReview}
           variant="primary"
         />
+        </div>
       </div>
     </div>
   );
