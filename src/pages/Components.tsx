@@ -65,31 +65,26 @@ export default function Components() {
         </div>
       </div>
 
-      {/* Modal con un solo botón */}
       <Modal
         title="Notificación"
         description="Esta es una notificación simple que solo requiere confirmación."
         type="single"
         isOpen={modalSingleOpen}
         onAccept={() => {
-          console.log('Modal aceptado');
           setModalSingleOpen(false);
         }}
         acceptLabel="Entendido"
       />
 
-      {/* Modal con dos botones */}
       <Modal
         title="Confirmar acción"
         description="¿Estás seguro de que deseas realizar esta acción? Esta operación no se puede deshacer."
         type="double"
         isOpen={modalDoubleOpen}
         onAccept={() => {
-          console.log('Acción confirmada');
           setModalDoubleOpen(false);
         }}
         onReject={() => {
-          console.log('Acción cancelada');
           setModalDoubleOpen(false);
         }}
         acceptLabel="Confirmar"

@@ -8,7 +8,6 @@
   user-select: none;
   color: colors.get-color("paper", 7);
 
-  // Elements
   &__input {
     appearance: none;
     width: 18px;
@@ -39,7 +38,6 @@
     cursor: pointer;
   }
 
-  // Modifiers
   &--disabled {
     opacity: 0.5;
     cursor: not-allowed;

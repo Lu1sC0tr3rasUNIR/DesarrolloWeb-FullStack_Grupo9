@@ -17,7 +17,6 @@ export default function useFilter(): IUseFilter {
 			max: null,
 		});
 
-  //Funciones de filtro
   const addFilter = useCallback(
     (filter: string) => {
       updateFilterFromStorage(filter);
@@ -55,5 +54,4 @@ export default function useFilter(): IUseFilter {
     filter,
     removeCategoryFilter,
   };
-  // Implementation would go here
 }

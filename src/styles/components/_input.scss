@@ -8,7 +8,6 @@
   position: relative;
   width: 100%;
 
-  // Elements
   &__label {
     font-size: 13px;
     font-weight: 500;
@@ -56,7 +55,6 @@
     }
   }
 
-  // Modifiers
   &--with-icon {
     .input__field {
       padding-left: 27px;

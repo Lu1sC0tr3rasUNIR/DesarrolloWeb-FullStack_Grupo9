@@ -8,7 +8,7 @@ import useCart from "@/hooks/useCart";
 import useLocalStorage from "@/hooks/useLocalStorage";
 
 export default function CheckOut() {
-  const { cart, totalValue, updateCart } = useLocalStorage();
+  const { totalValue, updateCart } = useLocalStorage();
   const { getTotalBooks } = useCart();
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
@@ -21,11 +21,8 @@ export default function CheckOut() {
   };
 
   const handleAcceptPayment = () => {
-    // Limpiar el carrito
     updateCart(new Map());
-    // Cerrar el modal
     setShowModal(false);
-    // Navegar a la página principal
     navigate("/home");
   };
 
@@ -34,7 +31,6 @@ export default function CheckOut() {
       <h1>Resumen de pedido</h1>
 
       <div className="checkout-content">
-        {/* FORMULARIO */}
         <div className="checkout-form">
           <h2>Dirección de envío</h2>
 
@@ -74,7 +70,6 @@ export default function CheckOut() {
           />
         </div>
 
-        {/* INFO */}
         <div className="checkout-info">
           <div className="info-box">
             <span className="icon">🚚</span>
@@ -94,7 +89,6 @@ export default function CheckOut() {
         </div>
       </div>
 
-      {/* RESUMEN */}
       <div className="checkout-summary">
         <p>
           <strong>Cantidad de productos:</strong> {getTotalBooks()}
@@ -113,14 +107,12 @@ export default function CheckOut() {
         />
       </div>
 
-      {/* PASOS */}
       <div className="checkout-steps">
         <span>Carro de compras</span>
         <span className="active">Información de envío</span>
         <span>Confirmación y pago</span>
       </div>
 
-      {/* MODAL DE CONFIRMACIÓN DE PAGO */}
       <Modal
         title="¡Pago exitoso!"
         description="Tu pedido ha sido procesado correctamente. Recibirás un correo de confirmación en breve."

@@ -26,7 +26,6 @@ export default function Book() {
     return isbn ? getBook(isbn) : undefined;
   }, [isbn, getBook]);
 
-  /* VALIDACIÓN */
   if (!book) {
     return (
       <div className="book__container">
@@ -35,7 +34,6 @@ export default function Book() {
     );
   }
 
-  /* CANTIDAD Y PRECIO */
   const [quantity, setQuantity] = useState(1);
   const [addedMessage, setAddedMessage] = useState(false);
 
@@ -45,7 +43,6 @@ export default function Book() {
   const unitPrice = book.price ?? 0;
   const totalPrice = unitPrice * quantity;
 
-  /* OPINIONES */
   const [reviews, setReviews] = useState<Review[]>([]);
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);
@@ -75,7 +72,6 @@ export default function Book() {
     setRating(0);
   };
 
-  // Agrega
   const handleAddToCart = () => {
     const newCart = new Map(cart);
     const key = book.isbn;
@@ -99,7 +95,6 @@ export default function Book() {
     setTimeout(() => setAddedMessage(false), 2000);
   };
 
-  // Compra directa
   const handleBuyNow = () => {
     const newCart = new Map(cart);
     const key = book.isbn;
@@ -111,15 +106,14 @@ export default function Book() {
     });
 
     updateCart(newCart);
-    setCartStatus();        // abre modal
-    navigate("/checkout"); // va a checkout
+    setCartStatus();        
+    navigate("/checkout");
   };
 
   return (
     <div className="book">
       <div className="book__container">
         <div className="book__main">
-        {/* IMAGEN */}
         <div className="book__image">
           <img
             src={book.image || "https://via.placeholder.com/220x300"}
@@ -127,7 +121,6 @@ export default function Book() {
           />
         </div>
 
-        {/* INFO */}
         <div className="book__info">
           <h1>{book.title}</h1>
           <p className="book__description">{book.description}</p>
@@ -138,7 +131,6 @@ export default function Book() {
           <p><strong>ISBN:</strong> {book.isbn}</p>
         </div>
 
-        {/* COMPRA */}
         <div className="book__buy">
           <p className="book__price">${totalPrice} USD</p>
           <p className="book__unit-price">Precio unitario: ${unitPrice} USD</p>
@@ -165,7 +157,6 @@ export default function Book() {
         </div>
       </div>
 
-        {/* OPINIONES */}
         <div className="book__reviews">
         <h2>Opiniones</h2>
 

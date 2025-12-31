@@ -6,7 +6,6 @@
   border-bottom: 1px solid #e0e0e0;
   align-items: center;
 
-  // Elements
   &__image {
     img {
       width: 120px;
@@ -48,13 +47,4 @@
     align-items: center;
   }
 
-  // Responsive
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 15px;
-
-    &__actions {
-      justify-content: flex-start;
-    }
-  }
 }

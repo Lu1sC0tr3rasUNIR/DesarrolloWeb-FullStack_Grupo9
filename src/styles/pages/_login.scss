@@ -146,19 +146,3 @@
   opacity: 0.95;
 }
 
-@media (max-width: 768px) {
-  .login__shell {
-    max-width: 100%;
-    grid-template-columns: minmax(0, 1fr);
-    border-radius: 0;
-  }
-
-  .login__form {
-    padding: 24px 18px 20px;
-    border-right: none;
-  }
-
-  .login__aside {
-    display: none;
-  }
-}

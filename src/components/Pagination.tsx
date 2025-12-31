@@ -1,8 +1,7 @@
-import React from 'react';
 import { IPagination } from '@/interfaces/components/IPagination.tsx';
 import Button from '@/components/button';
 
-const Pagination: React.FC<IPagination> = ({ currentPage, totalPages, onPageChange }) => {
+export default function Pagination({ currentPage, totalPages, onPageChange }: IPagination) {
   const handlePrevious = () => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
@@ -14,10 +13,6 @@ const Pagination: React.FC<IPagination> = ({ currentPage, totalPages, onPageChan
       onPageChange(currentPage + 1);
     }
   };
-
-  const iconColor = () => {
-    return "rgb(255, 255, 255)"; 
-  }
 
   return (
     <div className="pagination">
@@ -42,4 +37,3 @@ const Pagination: React.FC<IPagination> = ({ currentPage, totalPages, onPageChan
   );
 };
 
-export default Pagination;

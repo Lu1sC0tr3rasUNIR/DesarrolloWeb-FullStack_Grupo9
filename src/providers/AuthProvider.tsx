@@ -34,7 +34,6 @@ export default function AuthProvider({
   }, []);
 
   const isAuthenticated = !!token;
-  //const isAuthenticated = true;
 
   const value = useMemo(
     () => ({
@@ -53,7 +52,6 @@ export default function AuthProvider({
     if (!isAuthenticated) {
       navigate("/");
     }
-		console.log("AuthProvider useEffect - isAuthenticated:", isAuthenticated);
     const interval = setInterval(() => {
       countRef.current += 1;
       if (!isAuthenticated && countRef.current === 5) {

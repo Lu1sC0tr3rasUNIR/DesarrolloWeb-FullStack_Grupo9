@@ -25,14 +25,14 @@ $palette: (
 
 
 @function get-color($group, $shade, $fallback: null) {
-  $group-map: map.get($palette, $group); // 👈 solo dos argumentos
+  $group-map: map.get($palette, $group); 
   @if $group-map == null {
-    @return $fallback; // grupo no existe
+    @return $fallback; 
   }
 
   $value: map.get($group-map, $shade);
   @if $value == null {
-    @return $fallback; // shade no existe
+    @return $fallback;
   }
 
   @return $value;

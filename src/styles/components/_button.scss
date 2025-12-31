@@ -23,7 +23,6 @@
     box-shadow: 0 1px 3px rgba(15, 23, 42, 0.18);
   }
 
-  // Elements
   &__icon {
     display: inline-flex;
     align-items: center;
@@ -37,7 +36,6 @@
     align-items: center;
   }
 
-  // Modifiers
   &--base {
     background-color: colors.get-color('paper', 1);
     color: colors.get-color('paper', 7);

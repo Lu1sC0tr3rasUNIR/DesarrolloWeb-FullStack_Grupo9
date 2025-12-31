@@ -1,7 +1,7 @@
 export interface IModal {
   title: string;
   description: string;
-  type?: 'single' | 'double'; // 'single' = solo aceptar, 'double' = aceptar y rechazar
+  type?: 'single' | 'double';
   isOpen: boolean;
   onAccept: () => void;
   onReject?: () => void;

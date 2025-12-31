@@ -1,5 +1,3 @@
-// src/lib/myBackend.ts
-
 import { IBooks } from "@/interfaces/lib/myBackendInterface";
 
 export const userDB = "admin";

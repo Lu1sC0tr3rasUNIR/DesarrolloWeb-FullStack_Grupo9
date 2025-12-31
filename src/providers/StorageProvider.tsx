@@ -11,7 +11,6 @@ export default function StorageProvider({
 }: {
   children: React.ReactNode;
 }) {
-  /*STATES*/
   const [books, setBooks] = useState<Map<string, IBooks>>(new Map());
   const [category, setCategory] = useState<Map<string, ICheckbox>>(new Map());
   const [cart, setCart] = useState<Map<string, ICartItem>>(new Map());
@@ -25,8 +24,7 @@ export default function StorageProvider({
     min: 0,
     max: 1000,
   });
-
-  /*FILTROS*/
+  
   const addFilter = useCallback((value: string) => {
     setFilter(value);
   }, []);
@@ -41,8 +39,7 @@ export default function StorageProvider({
   const updateValueFilter = useCallback((min: number, max: number) => {
     setValueFilter({ min, max });
   }, []);
-
-  /*LIBROS*/
+  
   const getBook = (isbn: string): IBooks | undefined => {
     return books.get(isbn);
   };
@@ -63,7 +60,6 @@ export default function StorageProvider({
     });
   }, []);
 
-  /*CARRITO*/
   const updateCart = useCallback((newCart: Map<string, ICartItem>) => {
     setCart(newCart);
     const value = Array.from(newCart.values()).reduce(
@@ -77,7 +73,6 @@ export default function StorageProvider({
     setActiveCart((prev) => !prev);
   }, []);
 
-  /*CARGA INICIAL*/
   useEffect(() => {
     const storedBooks = myBackend();
     const categoryBooks = myCategorys();
@@ -97,7 +92,6 @@ export default function StorageProvider({
     setCategory(categoryMap);
   }, []);
 
-  /*CONTEXT VALUE*/
   const value: IStorageContext = useMemo(
     () => ({
       activeCart,

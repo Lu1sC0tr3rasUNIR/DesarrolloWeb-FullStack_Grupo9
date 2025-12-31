@@ -11,7 +11,6 @@ export default function Modal({
   acceptLabel = 'Aceptar',
   rejectLabel = 'Rechazar'
 }: IModal) {
-  // Si el modal no está abierto, no se renderiza
   if (!isOpen) return null;
 
   const handleAccept = () => {
@@ -27,17 +26,14 @@ export default function Modal({
   return (
     <div className="modal__overlay">
       <div className="modal__content">
-        {/* HEADER */}
         <header className="modal__header">
           <h2>{title}</h2>
         </header>
 
-        {/* BODY */}
         <div className="modal__body">
           <p className="modal__description">{description}</p>
         </div>
 
-        {/* FOOTER CON BOTONES */}
         <footer className="modal__footer">
           {type === 'double' && (
             <Button

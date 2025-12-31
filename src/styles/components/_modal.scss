@@ -1,6 +1,4 @@
-// MODAL
 .modal {
-  // Elements
   &__overlay {
     position: fixed;
     inset: 0;
@@ -80,28 +78,3 @@
   }
 }
 
-// RESPONSIVE
-@media (max-width: 600px) {
-  .modal {
-    &__content {
-      width: 95%;
-      max-width: none;
-    }
-
-    &__header h2 {
-      font-size: 20px;
-    }
-
-    &__description {
-      font-size: 15px;
-    }
-
-    &__footer {
-      flex-direction: column-reverse;
-
-      button {
-        width: 100%;
-      }
-    }
-  }
-}
