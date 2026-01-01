@@ -1,53 +1,53 @@
 @use "../variables/_colors.scss" as colors;
 
-.checkbox {
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  user-select: none;
-  color: colors.get-color("paper", 7);
+  justify-content: center;
+  z-index: 9999;
+  isolation: isolate;
+}
 
-  &__input {
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border-radius: 6px;
-    border: 1px solid colors.get-color("paper", 5);
-    background: #fff;
-    margin: 0;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+.modal {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: modalFadeIn 0.25s ease-out;
 
-    &:checked {
-      background: colors.get-color("primary", 3);
-      border-color: colors.get-color("primary", 3);
-      box-shadow: 0 0 0 3px rgba(48, 86, 105, 0.25);
-    }
+  opacity: 1;
+  filter: none;
+  transform: none;
 
-    &:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
+  h2 {
+    margin-bottom: 8px;
+    color: colors.get-color("paper", 9);
   }
 
-  &__label {
-    cursor: pointer;
+  p {
+    margin: 6px 0;
+    color: colors.get-color("paper", 6);
+    font-size: 14px;
   }
 
-  &--disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-
-    .checkbox__label {
-      color: colors.get-color("paper", 5);
-    }
+  button {
+    margin-top: 16px;
   }
+}
 
-  &:hover:not(.checkbox--disabled) {
-    color: colors.get-color("paper", 5);
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
