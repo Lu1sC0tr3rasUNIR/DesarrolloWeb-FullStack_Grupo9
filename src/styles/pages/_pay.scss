@@ -1,0 +1,152 @@
+.pay-page {
+  padding: 32px 40px;
+}
+
+.pay-page h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.pay-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.pay-left h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.order-list {
+  margin-bottom: 32px;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.order-row span:last-child {
+  font-weight: 500;
+}
+
+.shipping-box {
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.shipping-box h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.pay-right {
+  border-left: 1px solid #e5e5e5;
+  padding-left: 32px;
+}
+
+.coupon-box {
+  margin-bottom: 20px;
+}
+
+.coupon-box p {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.coupon-row {
+  display: flex;
+  gap: 8px;
+}
+
+.coupon-row input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.coupon-row button {
+  padding: 6px 14px;
+  border: 1px solid #aaa;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.totals-box {
+  font-size: 14px;
+  margin: 24px 0;
+}
+
+.totals-box p {
+  margin: 4px 0;
+}
+
+.totals-box strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.payment-methods {
+  margin-bottom: 16px;
+}
+
+.payment-methods p {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.method-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.method-buttons button {
+  padding: 8px 14px;
+  border: 1px solid #bbb;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+.method-buttons button.active {
+  border: 2px solid #000;
+}
+
+.card-form {
+  margin-top: 16px;
+}
+
+.card-form > * {
+  margin-bottom: 12px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkout-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.checkout-steps .active {
+  font-weight: 600;
+}
